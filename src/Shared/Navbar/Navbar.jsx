@@ -1,127 +1,205 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 function Navbar() {
-	const links = (
-		<>
-			<li>
-				<NavLink
-					to={"/"}
-					className={({ isActive }) =>
-						isActive
-							? "font-lato font-medium text-md border border-transparent bg-yellow-400 hover:bg-yellow-500 ease-in-out hover:text-black hover:font-semibold"
-							: "font-lato font-medium text-md border border-yellow-400 hover:bg-yellow-400 ease-in-out"
-					}
-				>
-					Home
-				</NavLink>
-			</li>
+    let { pathname } = useLocation();
 
-			<li>
-				<NavLink
-					to={"/blog"}
-					className={({ isActive }) =>
-						isActive
-							? "font-lato font-medium text-md border border-transparent bg-yellow-400 hover:bg-yellow-500 ease-in-out hover:text-black hover:font-semibold"
-							: "font-lato font-medium text-md border border-yellow-400 hover:bg-yellow-400 ease-in-out"
-					}
-				>
-					blog
-				</NavLink>
-			</li>
+    const links = (
+        <>
+            <button>
+                <NavLink
+                    to={"/"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
+                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                    }
+                >
+                    Home
+                </NavLink>
+            </button>
 
-			<li>
-				<NavLink
-					to={"/about"}
-					className={({ isActive }) =>
-						isActive
-							? "font-lato font-medium text-md border border-transparent bg-yellow-400 hover:bg-yellow-500 ease-in-out hover:text-black hover:font-semibold"
-							: "font-lato font-medium text-md border border-yellow-400 hover:bg-yellow-400 ease-in-out"
-					}
-				>
-					About
-				</NavLink>
-			</li>
+            <button>
+                <NavLink
+                    to={"/blog"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
+                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                    }
+                >
+                    Blog
+                </NavLink>
+            </button>
 
-			<li>
-				<NavLink
-					to={"/contact"}
-					className={({ isActive }) =>
-						isActive
-							? "font-lato font-medium text-md border border-transparent bg-yellow-400 hover:bg-yellow-500 ease-in-out hover:text-black hover:font-semibold"
-							: "font-lato font-medium text-md border border-yellow-400 hover:bg-yellow-400 ease-in-out"
-					}
-				>
-					Contact
-				</NavLink>
-			</li>
-		</>
-	);
+            <button>
+                <NavLink
+                    to={"/about"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
+                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                    }
+                >
+                    About
+                </NavLink>
+            </button>
 
-	return (
-		<>
-			<div className="z-[9999]">
-				<div className="navbar bg-base-100 container mx-auto mt-2">
-					<div className="navbar-start">
-						<div className="dropdown">
-							<div
-								tabIndex={0}
-								role="button"
-								className="btn btn-ghost lg:hidden"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									className="h-5 w-5"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="2"
-										d="M4 6h16M4 12h8m-8 6h16"
-									/>
-								</svg>
-							</div>
-							<ul
-								tabIndex={0}
-								className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-3"
-							>
-								{links}
-								<li className="flex lg:hidden">
-									<Link
-										to={"/login"}
-										className="text-md font-semibold border px-5 py-2 rounded-lg font-lato border-yellow-400 transition-all hover:bg-yellow-400 ease-in"
-									>
-										Login
-									</Link>
-								</li>
-							</ul>
-						</div>
-						<Link
-							to={"/"}
-							className="btn btn-ghost text-2xl font-lato"
-						>
-							Dream Dwellings
-						</Link>
-					</div>
-					<div className="navbar-center hidden lg:flex">
-						<ul className="menu menu-horizontal px-1 space-x-3">
-							{links}
-						</ul>
-					</div>
-					<div className="navbar-end hidden lg:flex">
-						<Link
-							to={"/login"}
-							className="text-xl font-semibold border px-5 py-2 rounded-lg font-lato border-yellow-400 transition-all hover:bg-yellow-400 ease-in"
-						>
-							Login
-						</Link>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+            <button>
+                <NavLink
+                    to={"/contact"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
+                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                    }
+                >
+                    Contact
+                </NavLink>
+            </button>
+        </>
+    );
+
+    return (
+        <>
+            <nav className="flex justify-center lg:justify-between container mx-auto mt-8 items-center flex-col lg:flex-row gap-5">
+                <div className="flex gap-5">
+                    <Link
+                        to={"/"}
+                        className="text-2xl font-lato font-bold cursor-pointer"
+                    >
+                        <span className="text-blue-600 font-extrabold text-4xl">
+                            D
+                        </span>
+                        ream{" "}
+                        <span className="text-blue-600 font-extrabold text-4xl">
+                            D
+                        </span>
+                        wellings
+                    </Link>
+
+                    <div className="flex lg:hidden">
+                        {pathname === "/login" ? (
+                            <Link
+                                to={"/register"}
+                                className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
+                            >
+                                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
+                                    Register
+                                </span>
+                                <span className="relative invisible">
+                                    Register
+                                </span>
+                            </Link>
+                        ) : (
+                            <Link
+                                to={"/login"}
+                                className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
+                            >
+                                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
+                                    Login
+                                </span>
+                                <span className="relative invisible">
+                                    login
+                                </span>
+                            </Link>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex gap-4 flex-wrap justify-center">
+                    {links}
+                </div>
+
+                <div className="hidden lg:flex">
+                    {pathname === "/login" ? (
+                        <Link
+                            to={"/register"}
+                            className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
+                        >
+                            <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    ></path>
+                                </svg>
+                            </span>
+                            <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
+                                Register
+                            </span>
+                            <span className="relative invisible">Register</span>
+                        </Link>
+                    ) : (
+                        <Link
+                            to={"/login"}
+                            className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
+                        >
+                            <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    ></path>
+                                </svg>
+                            </span>
+                            <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
+                                Login
+                            </span>
+                            <span className="relative invisible">login</span>
+                        </Link>
+                    )}
+                </div>
+            </nav>
+        </>
+    );
 }
 
 export default Navbar;
