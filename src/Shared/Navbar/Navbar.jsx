@@ -1,7 +1,12 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "../../../node_modules/animate.css/";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
+import { VscSignOut } from "react-icons/vsc";
+import { CgProfile } from "react-icons/cg";
 function Navbar() {
     let { pathname } = useLocation();
+    const { user, signOutUser } = useContext(AuthContext);
 
     const links = (
         <>
@@ -144,7 +149,53 @@ function Navbar() {
                     </div>
 
                     <div className="hidden md:hidden lg:flex">
-                        {pathname === "/login" ? (
+                        {user ? (
+                            <div className="flex items-center">
+                                <h1 className="btn font-bold text-lg">
+                                    {user.displayName}
+                                </h1>
+
+                                <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
+                                    <div
+                                        tabIndex={0}
+                                        role="button"
+                                        className="m-1 rounded-full w-12"
+                                    >
+                                        <img
+                                            className="w-full h-full rounded-full"
+                                            src={user.photoURL}
+                                            alt=""
+                                        />
+                                    </div>
+                                    <ul
+                                        tabIndex={0}
+                                        className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                                    >
+                                        <li>
+                                            <Link to={"/profile"}>
+                                                <button className="flex items-center gap-2">
+                                                    <CgProfile className="text-lg mt-1" />{" "}
+                                                    <span className="text-lg">
+                                                        Profile
+                                                    </span>
+                                                </button>
+                                            </Link>
+                                        </li>
+
+                                        <li>
+                                            <button
+                                                onClick={() => signOutUser()}
+                                            >
+                                                <VscSignOut className="text-lg mt-1" />{" "}
+                                                <span className="text-lg">
+                                                    Sign out
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        ) : pathname === "/login" ? (
                             <Link
                                 to={"/register"}
                                 className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"

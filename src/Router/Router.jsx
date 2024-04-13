@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { About, Blog, Contact, Details, Home, Login, Register } from "../Pages";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -33,8 +34,20 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/details/:id/:title",
-                element: <Details />,
+                element: (
+                    <PrivateRoute>
+                        <Details />
+                    </PrivateRoute>
+                ),
                 loader: () => fetch("/ResidentialsData.json"),
+            },
+            {
+                path: "/profile",
+                element: (
+                    <PrivateRoute>
+                        <div>Profie</div>
+                    </PrivateRoute>
+                ),
             },
         ],
     },

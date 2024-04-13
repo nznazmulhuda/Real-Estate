@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
     GoogleAuthProvider,
@@ -6,12 +6,17 @@ import {
     signInWithPopup,
     GithubAuthProvider,
     signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut,
 } from "firebase/auth";
 import { auth } from "./../Firebase/Firebase.config";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
+    const [user, setUser] = useState(null);
+
     // Create user by email and password
     const createUser = (email, pass) => {
         return createUserWithEmailAndPassword(auth, email, pass);
@@ -34,11 +39,33 @@ function AuthProvider({ children }) {
         return signInWithEmailAndPassword(auth, email, pass);
     };
 
+    const signOutUser = () => {
+        signOut(auth)
+            .then(() => toast.success("Sign out success!"))
+            .catch((e) => toast.error(e.message));
+    };
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+            } else {
+                setUser("");
+            }
+        });
+
+        return () => {
+            unSubscribe();
+        };
+    }, []);
+
     const authInfo = {
         createUser,
         googleUser,
         githubUser,
-        emailLogin
+        emailLogin,
+        user,
+        signOutUser,
     };
 
     return (
