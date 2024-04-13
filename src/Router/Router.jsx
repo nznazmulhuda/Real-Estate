@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import { About, Blog, Contact, Home, Login, Register } from "../Pages";
+import { About, Blog, Contact, Details, Home, Login, Register } from "../Pages";
 
 export const router = createBrowserRouter([
     {
@@ -10,7 +10,6 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("./ResidentialsData.json"),
             },
             {
                 path: "/blog",
@@ -31,6 +30,11 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register />,
+            },
+            {
+                path: "/details/:id/:title",
+                element: <Details />,
+                loader: () => fetch("/ResidentialsData.json"),
             },
         ],
     },

@@ -2,10 +2,17 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "./Components/Banner";
 import HomeCard from "./Components/HomeCard";
 import useTitle from "react-dynamic-title";
+import { useEffect, useState } from "react";
 
 function Home() {
-    const homeCards = useLoaderData();
     useTitle("Home");
+    // const homeCards = useLoaderData();
+    const [homeCards, setHomeCards] = useState([]);
+    useEffect(() => {
+        fetch("./ResidentialsData.json")
+            .then((res) => res.json())
+            .then((data) => setHomeCards(data));
+    }, []);
 
     return (
         <>
@@ -29,7 +36,7 @@ function Home() {
                     </h5>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 container mx-auto overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container gap-0 lg:gap-5 mx-auto overflow-hidden">
                     {homeCards.map((homeCard) => (
                         <HomeCard key={homeCard.id} homeCard={homeCard} />
                     ))}

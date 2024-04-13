@@ -1,243 +1,243 @@
 [
-	{
-		"id": 1,
-		"estate_title": "Cozy Suburban Retreat",
-		"segment_name": "Single Family",
-		"description": "This charming single-family home is nestled in a quiet suburban neighborhood, offering a peaceful retreat from the hustle and bustle of city life. Featuring spacious living areas, a modern kitchen, and a beautifully landscaped backyard.",
-		"price": "$350,000",
-		"status": "sale",
-		"area": "2,500 sq ft",
-		"location": "Suburban Heights, Anytown, USA",
-		"facilities": ["living room", "kitchen", "backyard garden", "garage"],
-		"image_urls": [
-			"https://i.ibb.co/51BBsgh/SF1.webp",
-			"https://i.ibb.co/Jk1GMPs/SF1-1.jpg"
-		],
-		"bedrooms": 4,
-		"bathrooms": 2,
-		"year_built": 2005,
-		"hoa_fees": "$100/month",
-		"school_district": "Anytown School District",
-		"listing_agent": "John Doe",
-		"contact_email": "john@example.com",
-		"contact_phone": "+1 (555) 123-4567"
-	},
-	{
-		"id": 2,
-		"estate_title": "Luxury City Penthouse",
-		"segment_name": "Apartment",
-		"description": "Experience urban luxury at its finest in this stunning penthouse apartment located in the heart of the city. Boasting panoramic views, high-end finishes, and access to exclusive amenities.",
-		"price": "$5,000/month",
-		"status": "rent",
-		"area": "1,800 sq ft",
-		"location": "Downtown Skyline, Metropolitan City, USA",
-		"facilities": [
-			"spacious balcony",
-			"fitness center",
-			"rooftop terrace",
-			"concierge service"
-		],
-		"image_urls": [
-			"https://i.ibb.co/dcjMH6S/AP1.jpg",
-			"https://i.ibb.co/kDt8221/AP1-1.jpg"
-		],
-		"bedrooms": 3,
-		"bathrooms": 2,
-		"floor_number": 20,
-		"pet_policy": "Pets allowed with restrictions",
-		"amenities": ["pool", "gym", "security"],
-		"leasing_company": "Metropolitan Rentals",
-		"contact_email": "leasing@example.com",
-		"contact_phone": "+1 (555) 987-6543"
-	},
-	{
-		"id": 3,
-		"estate_title": "Serenity Cove Condo",
-		"segment_name": "Condominium",
-		"description": "Escape to tranquility in this waterfront condo, offering breathtaking views of the serene cove. Enjoy resort-style amenities and easy access to outdoor recreation.",
-		"price": "$450,000",
-		"status": "sale",
-		"area": "1,200 sq ft",
-		"location": "Serenity Cove, Coastal Town, USA",
-		"facilities": [
-			"waterfront view",
-			"swimming pool",
-			"tennis courts",
-			"private dock"
-		],
-		"image_urls": [
-			"https://i.ibb.co/680Fpby/C1.jpg",
-			"https://i.ibb.co/4K65Dnr/C1-1.jpg"
-		],
-		"bedrooms": 2,
-		"bathrooms": 2,
-		"floor_number": 5,
-		"hoa_fees": "$200/month",
-		"amenities": ["pool", "tennis courts", "private dock"],
-		"contact_email": "sales@example.com",
-		"contact_phone": "+1 (555) 555-5555"
-	},
-	{
-		"id": 4,
-		"estate_title": "Modern Townhouse Living",
-		"segment_name": "Townhouse",
-		"description": "Experience contemporary urban living in this sleek townhouse located in a vibrant neighborhood. Featuring an open floor plan, high ceilings, and rooftop deck with city views.",
-		"price": "$600,000",
-		"status": "sale",
-		"area": "1,600 sq ft",
-		"location": "Metro District, Trendy City, USA",
-		"facilities": [
-			"rooftop deck",
-			"attached garage",
-			"gourmet kitchen",
-			"walk-in closets"
-		],
-		"image_urls": [
-			"https://i.ibb.co/gJmkZ8q/TW1.jpg",
-			"https://i.ibb.co/MntFxZ0/TW2.jpg",
-			"https://i.ibb.co/0mQBt6V/TW3.jpg",
-			"https://i.ibb.co/d5zrcbb/TW4.jpg"
-		],
-		"bedrooms": 3,
-		"bathrooms": 3,
-		"year_built": 2010,
-		"hoa_fees": "$150/month",
-		"contact_email": "info@example.com",
-		"contact_phone": "+1 (555) 123-4567"
-	},
-	{
-		"id": 5,
-		"estate_title": "Resort-style Villa",
-		"segment_name": "Vacation Rental",
-		"description": "Indulge in luxury at this stunning resort-style villa, featuring lush tropical landscaping, a private pool, and spacious outdoor living areas. Perfect for a relaxing getaway.",
-		"price": "$800/night",
-		"status": "rent",
-		"area": "3,500 sq ft",
-		"location": "Tropical Paradise, Island Retreat, USA",
-		"facilities": [
-			"private pool",
-			"outdoor kitchen",
-			"game room",
-			"home theater"
-		],
-		"image_urls": [
-			"https://i.ibb.co/SBGpPNq/VR1.jpg",
-			"https://i.ibb.co/09xH4Y5/VR1-1.jpg"
-		],
-		"bedrooms": 5,
-		"bathrooms": 5,
-		"amenities": [
-			"private pool",
-			"game room",
-			"home theater",
-			"oceanfront"
-		],
-		"contact_email": "vacation@example.com",
-		"contact_phone": "+1 (555) 123-4567"
-	},
-	{
-		"id": 6,
-		"estate_title": "Urban Loft Oasis",
-		"segment_name": "Loft",
-		"description": "Discover urban sophistication in this chic loft space, featuring exposed brick walls, high ceilings, and industrial-inspired design elements. Located in a trendy downtown district.",
-		"price": "$2,500/month",
-		"status": "rent",
-		"area": "1,000 sq ft",
-		"location": "Arts District, Metropolitan City, USA",
-		"facilities": [
-			"exposed brick walls",
-			"modern kitchen",
-			"walk-in shower",
-			"urban views"
-		],
-		"image_urls": [
-			"https://i.ibb.co/wRVvvqL/L1.jpg",
-			"https://i.ibb.co/dmRFXC0/L2.jpg"
-		],
-		"bedrooms": 1,
-		"bathrooms": 1,
-		"floor_number": 3,
-		"pet_policy": "No pets allowed",
-		"amenities": ["gym", "rooftop terrace"],
-		"contact_email": "leasing@example.com",
-		"contact_phone": "+1 (555) 987-6543"
-	},
-	{
-		"id": 7,
-		"estate_title": "Seaside Retreat",
-		"segment_name": "Vacation Rental",
-		"description": "Escape to paradise in this charming seaside cottage, just steps away from the sandy shores. Enjoy breathtaking ocean views and gentle sea breezes.",
-		"price": "$300/night",
-		"status": "rent",
-		"area": "900 sq ft",
-		"location": "Seaside Village, Coastal Town, USA",
-		"facilities": [
-			"oceanfront deck",
-			"fireplace",
-			"fully equipped kitchen",
-			"beach access"
-		],
-		"image_urls": [
-			"https://i.ibb.co/yq5Yx9p/VR2.jpg",
-			"https://i.ibb.co/hHdk8vC/VR3.jpg"
-		],
-		"bedrooms": 2,
-		"bathrooms": 1,
-		"amenities": ["oceanfront deck", "fireplace", "beach access"],
-		"contact_email": "vacation@example.com",
-		"contact_phone": "+1 (555) 123-4567"
-	},
-	{
-		"id": 8,
-		"estate_title": "Mountain View Haven",
-		"segment_name": "Single Family",
-		"description": "Experience mountain living at its finest in this spacious family home, offering panoramic views of the surrounding peaks. Ideal for outdoor enthusiasts.",
-		"price": "$550,000",
-		"status": "sale",
-		"area": "2,800 sq ft",
-		"location": "Mountain Ridge, Alpine Town, USA",
-		"facilities": [
-			"mountain views",
-			"wrap-around deck",
-			"hiking trails nearby",
-			"spacious yard"
-		],
-		"image_urls": [
-			"https://i.ibb.co/HgkQPH3/SF2.webp",
-			"https://i.ibb.co/SRKrs72/SF2-1.jpg"
-		],
-		"bedrooms": 3,
-		"bathrooms": 2,
-		"year_built": 2015,
-		"hoa_fees": "$50/month",
-		"school_district": "Alpine School District",
-		"listing_agent": "Jane Smith",
-		"contact_email": "jane@example.com",
-		"contact_phone": "+1 (555) 987-6543"
-	},
-	{
-		"id": 9,
-		"estate_title": "Lakeside Retreat",
-		"segment_name": "Vacation Rental",
-		"description": "Escape the hustle and bustle of city life at this tranquil lakeside retreat. Enjoy fishing, kayaking, and relaxing by the water's edge.",
-		"price": "$250/night",
-		"status": "rent",
-		"area": "1,200 sq ft",
-		"location": "Lakefront Hideaway, Rustic Town, USA",
-		"facilities": [
-			"lakefront view",
-			"private dock",
-			"fire pit",
-			"BBQ area"
-		],
-		"image_urls": [
-			"https://i.ibb.co/FWSV6LB/VR4.jpg",
-			"https://i.ibb.co/q5WQGZV/FR2-1.jpg"
-		],
-		"bedrooms": 2,
-		"bathrooms": 2,
-		"amenities": ["lakefront view", "private dock", "fire pit", "BBQ area"],
-		"contact_email": "vacation@example.com",
-		"contact_phone": "+1 (555) 123-4567"
-	}
+    {
+        "id": 1,
+        "estate_title": "Cozy Suburban Retreat",
+        "segment_name": "Single Family",
+        "description": "This charming single-family home is nestled in a quiet suburban neighborhood, offering a peaceful retreat from the hustle and bustle of city life. Featuring spacious living areas, a modern kitchen, and a beautifully landscaped backyard.",
+        "price": "$350,000",
+        "status": "sale",
+        "area": "2,500 sq ft",
+        "location": "Suburban Heights, Anytown, USA",
+        "facilities": ["living room", "kitchen", "backyard garden", "garage"],
+        "image_urls": [
+            "https://i.ibb.co/51BBsgh/SF1.webp",
+            "https://i.ibb.co/Jk1GMPs/SF1-1.jpg"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "year_built": 2005,
+        "hoa_fees": "$100/month",
+        "school_district": "Anytown School District",
+        "listing_agent": "John Doe",
+        "contact_email": "john@example.com",
+        "contact_phone": "+1 (555) 123-4567"
+    },
+    {
+        "id": 2,
+        "estate_title": "Luxury City Penthouse",
+        "segment_name": "Apartment",
+        "description": "Experience urban luxury at its finest in this stunning penthouse apartment located in the heart of the city. Boasting panoramic views, high-end finishes, and access to exclusive amenities.",
+        "price": "$5,000/month",
+        "status": "rent",
+        "area": "1,800 sq ft",
+        "location": "Downtown Skyline, Metropolitan City, USA",
+        "facilities": [
+            "spacious balcony",
+            "fitness center",
+            "rooftop terrace",
+            "concierge service"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/dcjMH6S/AP1.jpg",
+            "https://i.ibb.co/kDt8221/AP1-1.jpg"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "floor_number": 20,
+        "pet_policy": "Pets allowed with restrictions",
+        "amenities": ["pool", "gym", "security"],
+        "leasing_company": "Metropolitan Rentals",
+        "contact_email": "leasing@example.com",
+        "contact_phone": "+1 (555) 987-6543"
+    },
+    {
+        "id": 3,
+        "estate_title": "Serenity Cove Condo",
+        "segment_name": "Condominium",
+        "description": "Escape to tranquility in this waterfront condo, offering breathtaking views of the serene cove. Enjoy resort-style amenities and easy access to outdoor recreation.",
+        "price": "$450,000",
+        "status": "sale",
+        "area": "1,200 sq ft",
+        "location": "Serenity Cove, Coastal Town, USA",
+        "facilities": [
+            "waterfront view",
+            "swimming pool",
+            "tennis courts",
+            "private dock"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/680Fpby/C1.jpg",
+            "https://i.ibb.co/4K65Dnr/C1-1.jpg"
+        ],
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "floor_number": 5,
+        "hoa_fees": "$200/month",
+        "amenities": ["pool", "tennis courts", "private dock"],
+        "contact_email": "sales@example.com",
+        "contact_phone": "+1 (555) 555-5555"
+    },
+    {
+        "id": 4,
+        "estate_title": "Modern Townhouse Living",
+        "segment_name": "Townhouse",
+        "description": "Experience contemporary urban living in this sleek townhouse located in a vibrant neighborhood. Featuring an open floor plan, high ceilings, and rooftop deck with city views.",
+        "price": "$600,000",
+        "status": "sale",
+        "area": "1,600 sq ft",
+        "location": "Metro District, Trendy City, USA",
+        "facilities": [
+            "rooftop deck",
+            "attached garage",
+            "gourmet kitchen",
+            "walk-in closets"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/gJmkZ8q/TW1.jpg",
+            "https://i.ibb.co/MntFxZ0/TW2.jpg",
+            "https://i.ibb.co/0mQBt6V/TW3.jpg",
+            "https://i.ibb.co/d5zrcbb/TW4.jpg"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "year_built": 2010,
+        "hoa_fees": "$150/month",
+        "contact_email": "info@example.com",
+        "contact_phone": "+1 (555) 123-4567"
+    },
+    {
+        "id": 5,
+        "estate_title": "Resort-style Villa",
+        "segment_name": "Vacation Rental",
+        "description": "Indulge in luxury at this stunning resort-style villa, featuring lush tropical landscaping, a private pool, and spacious outdoor living areas. Perfect for a relaxing getaway.",
+        "price": "$800/night",
+        "status": "rent",
+        "area": "3,500 sq ft",
+        "location": "Tropical Paradise, Island Retreat, USA",
+        "facilities": [
+            "private pool",
+            "outdoor kitchen",
+            "game room",
+            "home theater"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/SBGpPNq/VR1.jpg",
+            "https://i.ibb.co/09xH4Y5/VR1-1.jpg"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "amenities": [
+            "private pool",
+            "game room",
+            "home theater",
+            "oceanfront"
+        ],
+        "contact_email": "vacation@example.com",
+        "contact_phone": "+1 (555) 123-4567"
+    },
+    {
+        "id": 6,
+        "estate_title": "Urban Loft Oasis",
+        "segment_name": "Loft",
+        "description": "Discover urban sophistication in this chic loft space, featuring exposed brick walls, high ceilings, and industrial-inspired design elements. Located in a trendy downtown district.",
+        "price": "$2,500/month",
+        "status": "rent",
+        "area": "1,000 sq ft",
+        "location": "Arts District, Metropolitan City, USA",
+        "facilities": [
+            "exposed brick walls",
+            "modern kitchen",
+            "walk-in shower",
+            "urban views"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/wRVvvqL/L1.jpg",
+            "https://i.ibb.co/dmRFXC0/L2.jpg"
+        ],
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "floor_number": 3,
+        "pet_policy": "No pets allowed",
+        "amenities": ["gym", "rooftop terrace"],
+        "contact_email": "leasing@example.com",
+        "contact_phone": "+1 (555) 987-6543"
+    },
+    {
+        "id": 7,
+        "estate_title": "Seaside Retreat",
+        "segment_name": "Vacation Rental",
+        "description": "Escape to paradise in this charming seaside cottage, just steps away from the sandy shores. Enjoy breathtaking ocean views and gentle sea breezes.",
+        "price": "$300/night",
+        "status": "rent",
+        "area": "900 sq ft",
+        "location": "Seaside Village, Coastal Town, USA",
+        "facilities": [
+            "oceanfront deck",
+            "fireplace",
+            "fully equipped kitchen",
+            "beach access"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/yq5Yx9p/VR2.jpg",
+            "https://i.ibb.co/hHdk8vC/VR3.jpg"
+        ],
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "amenities": ["oceanfront deck", "fireplace", "beach access"],
+        "contact_email": "vacation@example.com",
+        "contact_phone": "+1 (555) 123-4567"
+    },
+    {
+        "id": 8,
+        "estate_title": "Mountain View Haven",
+        "segment_name": "Single Family",
+        "description": "Experience mountain living at its finest in this spacious family home, offering panoramic views of the surrounding peaks. Ideal for outdoor enthusiasts.",
+        "price": "$550,000",
+        "status": "sale",
+        "area": "2,800 sq ft",
+        "location": "Mountain Ridge, Alpine Town, USA",
+        "facilities": [
+            "mountain views",
+            "wrap-around deck",
+            "hiking trails nearby",
+            "spacious yard"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/HgkQPH3/SF2.webp",
+            "https://i.ibb.co/SRKrs72/SF2-1.jpg"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "year_built": 2015,
+        "hoa_fees": "$50/month",
+        "school_district": "Alpine School District",
+        "listing_agent": "Jane Smith",
+        "contact_email": "jane@example.com",
+        "contact_phone": "+1 (555) 987-6543"
+    },
+    {
+        "id": 9,
+        "estate_title": "Lakeside Retreat",
+        "segment_name": "Vacation Rental",
+        "description": "Escape the hustle and bustle of city life at this tranquil lakeside retreat. Enjoy fishing, kayaking, and relaxing by the water's edge.",
+        "price": "$250/night",
+        "status": "rent",
+        "area": "1,200 sq ft",
+        "location": "Lakefront Hideaway, Rustic Town, USA",
+        "facilities": [
+            "lakefront view",
+            "private dock",
+            "fire pit",
+            "BBQ area"
+        ],
+        "image_urls": [
+            "https://i.ibb.co/FWSV6LB/VR4.jpg",
+            "https://i.ibb.co/q5WQGZV/FR2-1.jpg"
+        ],
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "amenities": ["lakefront view", "private dock", "fire pit", "BBQ area"],
+        "contact_email": "vacation@example.com",
+        "contact_phone": "+1 (555) 123-4567"
+    }
 ]

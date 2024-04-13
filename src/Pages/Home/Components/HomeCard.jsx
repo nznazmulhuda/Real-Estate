@@ -20,13 +20,14 @@ function HomeCard({ homeCard }) {
         facilities,
         image_urls,
         status,
+        id,
     } = homeCard;
 
     return (
         <>
-            <div data-aos="flip-down" className="overflow-hidden">
+            <div data-aos="flip-down" className="overflow-hidden rounded-xl">
                 <div
-                    className="card bg-base-100 shadow-xl mt-7 pt-4 overflow-hidden"
+                    className="card bg-base-100 shadow-2xl mt-7 pt-4 overflow-hidden rounded-xl"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
@@ -47,9 +48,9 @@ function HomeCard({ homeCard }) {
                     >
                         {image_urls.map((url) => (
                             <SwiperSlide key={url} title="Slide left">
-                                <div className="w-full h-full rounded">
+                                <div className="w-full h-full rounded-xl">
                                     <img
-                                        className="w-full h-full rounded overflow-hidden"
+                                        className="w-full h-full rounded-xl overflow-hidden"
                                         src={url}
                                         alt={url}
                                     />
@@ -79,7 +80,14 @@ function HomeCard({ homeCard }) {
                         </h2>
                         <p data-aos="fade-up" data-aos-delay="400">
                             {description.split(" ").slice(0, 12).join(" ")}...{" "}
-                            <Link className="text-blue-500">Read more</Link>
+                            <Link
+                                to={`/details/${id}/${estate_title
+                                    .split(" ")
+                                    .join("+")}`}
+                                className="text-blue-500"
+                            >
+                                Read more
+                            </Link>
                         </p>
 
                         <p data-aos="fade-up" data-aos-delay="500">
@@ -111,7 +119,11 @@ function HomeCard({ homeCard }) {
                             data-aos="fade-left"
                             data-aos-delay="1000"
                         >
-                            <Link>
+                            <Link
+                                to={`/details/${id}/${estate_title
+                                    .split(" ")
+                                    .join("+")}`}
+                            >
                                 <button className="btn bg-blue-700 text-white hover:bg-blue-600 ">
                                     View Property
                                 </button>
