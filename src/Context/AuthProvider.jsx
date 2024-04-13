@@ -5,6 +5,7 @@ import {
     createUserWithEmailAndPassword,
     signInWithPopup,
     GithubAuthProvider,
+    signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "./../Firebase/Firebase.config";
 
@@ -28,10 +29,16 @@ function AuthProvider({ children }) {
         return signInWithPopup(auth, provider);
     };
 
+    // Login user by email and pass
+    const emailLogin = (email, pass) => {
+        return signInWithEmailAndPassword(auth, email, pass);
+    };
+
     const authInfo = {
         createUser,
         googleUser,
         githubUser,
+        emailLogin
     };
 
     return (

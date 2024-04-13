@@ -11,9 +11,11 @@ import {
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
+import { Link } from "react-router-dom";
 
 function Register() {
     useTitle("Register");
+
     const { createUser, googleUser, githubUser } = useContext(AuthContext);
     const [passVer, setPassVer] = useState("");
     const {
@@ -30,14 +32,12 @@ function Register() {
         const pass = e.Password;
         createUser(email, pass)
             .then(
-                (result) => (
+                () =>
                     updateProfile(auth.currentUser, {
                         displayName: name,
                         photoURL: photoUrl,
                     }),
-                    toast.success("Login Success!"),
-                    console.log(result)
-                ),
+                toast.success("Login Success!"),
             )
             .catch((e) => toast.error(e.message));
         setPassVer("");
@@ -65,7 +65,7 @@ function Register() {
             <div className="mx-auto container">
                 <form
                     onSubmit={handleSubmit(handleRegister)}
-                    className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 mt-10 rounded-lg"
+                    className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 md:p-7 lg:p-10 mt-10 rounded-lg shadow-lg"
                 >
                     <input
                         type="text"
@@ -156,11 +156,12 @@ function Register() {
                     </div>
 
                     <input
-                        type="submit"
+                        type="Submit"
                         className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4"
                         data-rounded="rounded-md"
                         data-primary="blue-600"
                         data-primary-reset="{}"
+                        defaultValue={"Register"}
                     />
 
                     <div className="divider py-5">
@@ -181,6 +182,12 @@ function Register() {
                                 onClick={handleGithub}
                             />
                         </div>
+
+                        <Link to={"/login"}>
+                            <h1 className="text-blue-500 underline font-semibold mt-3">
+                                Already have an account
+                            </h1>
+                        </Link>
                     </div>
                 </form>
             </div>
