@@ -1,11 +1,14 @@
+import useTitle from "react-dynamic-title";
+
 function Login() {
-	return (
-		<>
-			<div>
-				<h1>Login</h1>
-			</div>
-		</>
-	);
+    useTitle("Login");
+    return (
+        <>
+            <div>
+                <h1>Login</h1>
+            </div>
+        </>
+    );
 }
 
 export default Login;

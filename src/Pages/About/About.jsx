@@ -1,11 +1,14 @@
+import useTitle from "react-dynamic-title";
+
 function About() {
-	return (
-		<>
-			<div>
-				<h1>About</h1>
-			</div>
-		</>
-	);
+    useTitle("About");
+    return (
+        <>
+            <div>
+                <h1>About</h1>
+            </div>
+        </>
+    );
 }
 
 export default About;

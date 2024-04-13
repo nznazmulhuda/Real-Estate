@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "./Components/Banner";
 import HomeCard from "./Components/HomeCard";
+import useTitle from "react-dynamic-title";
 
 function Home() {
     const homeCards = useLoaderData();
+    useTitle("Home");
 
     return (
         <>
@@ -33,8 +35,6 @@ function Home() {
                     ))}
                 </div>
             </div>
-
-            
         </>
     );
 }

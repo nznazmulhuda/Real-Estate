@@ -1,11 +1,14 @@
+import useTitle from "react-dynamic-title";
+
 function Blog() {
-	return (
-		<>
-			<div>
-				<h1>Blog</h1>
-			</div>
-		</>
-	);
+    useTitle("Blog");
+    return (
+        <>
+            <div>
+                <h1>Blog</h1>
+            </div>
+        </>
+    );
 }
 
 export default Blog;

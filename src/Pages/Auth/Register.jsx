@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitle from "react-dynamic-title";
 
 function Register() {
+    useTitle("Register");
     const { createUser, googleUser } = useContext(AuthContext);
 
     const handleRegister = (e) => {
