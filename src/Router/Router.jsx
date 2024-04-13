@@ -1,6 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import { About, Blog, Contact, Details, Home, Login, Register } from "../Pages";
+import {
+    About,
+    Blog,
+    Contact,
+    Details,
+    Home,
+    Login,
+    Profile,
+    ProfileEdit,
+    Register,
+} from "../Pages";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -45,7 +55,15 @@ export const router = createBrowserRouter([
                 path: "/profile",
                 element: (
                     <PrivateRoute>
-                        <div>Profie</div>
+                        <Profile />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/profile-edit",
+                element: (
+                    <PrivateRoute>
+                        <ProfileEdit />
                     </PrivateRoute>
                 ),
             },
