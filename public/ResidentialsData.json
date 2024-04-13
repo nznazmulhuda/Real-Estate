@@ -2,7 +2,7 @@
 	{
 		"id": 1,
 		"estate_title": "Cozy Suburban Retreat",
-		"segment_name": "Single Family Home",
+		"segment_name": "Single Family",
 		"description": "This charming single-family home is nestled in a quiet suburban neighborhood, offering a peaceful retreat from the hustle and bustle of city life. Featuring spacious living areas, a modern kitchen, and a beautifully landscaped backyard.",
 		"price": "$350,000",
 		"status": "sale",
@@ -190,7 +190,7 @@
 	{
 		"id": 8,
 		"estate_title": "Mountain View Haven",
-		"segment_name": "Single Family Home",
+		"segment_name": "Single Family",
 		"description": "Experience mountain living at its finest in this spacious family home, offering panoramic views of the surrounding peaks. Ideal for outdoor enthusiasts.",
 		"price": "$550,000",
 		"status": "sale",

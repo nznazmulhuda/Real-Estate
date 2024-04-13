@@ -104,14 +104,14 @@ function Banner() {
 
                 <div className="absolute z-[9998] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
                     <div className="text-center mx-auto">
-                        <div className="animate__animated animate__fadeInUp">
+                        <div className="animate__animated animate__fadeInUp animate__delay-.3s">
                             <span className="text-2xl md:text-4xl lg:text-5xl bg-300% font-bold font-lato bg-gradient-to-l from-white via-blue-700 to-blue-300 text-transparent bg-clip-text animate-gradient md:leading-10 lg:leading-[50px]">
                                 Discover Your Perfect Home <br /> Where Dreams
                                 Meet Reality with Ease
                             </span>
                         </div>
 
-                        <h2 className="text-lg lg:text-xl text-white mt-3 mb-3 font-semibold font-josefin lg:leading-10 animate__animated animate__fadeInUp animate__delay-.2s">
+                        <h2 className="text-lg lg:text-xl text-white mt-3 mb-3 font-semibold font-josefin lg:leading-10 animate__animated animate__fadeInUp animate__delay-.6s">
                             Welcome to{" "}
                             <span className="text-2xl text-blue-600">D</span>
                             ream{" "}
@@ -121,7 +121,7 @@ function Banner() {
                         </h2>
                     </div>
 
-                    <div className="w-4/5 lg:w-1/2 mx-auto bg-white flex justify-between px-3 lg:px-6 py-1 lg:py-3 rounded-full animate__animated animate__fadeInUp animate__delay-.4s">
+                    <div className="w-4/5 lg:w-1/2 mx-auto bg-white flex justify-between px-3 lg:px-6 py-1 lg:py-3 rounded-full animate__animated animate__fadeInUp animate__delay-.9s">
                         <input
                             className="outline-none border-none w-full font-lato bg-transparent placeholder:text-sm"
                             type="text"
