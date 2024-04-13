@@ -11,10 +11,13 @@ import {
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Register() {
     useTitle("Register");
+
+    const { state } = useLocation();
+    const navigate = useNavigate();
 
     const { createUser, googleUser, githubUser } = useContext(AuthContext);
     const [passVer, setPassVer] = useState("");
@@ -30,15 +33,17 @@ function Register() {
         const photoUrl = e.Photo_Url;
         const email = e.Email;
         const pass = e.Password;
+
         createUser(email, pass)
-            .then(
-                () =>
-                    updateProfile(auth.currentUser, {
-                        displayName: name,
-                        photoURL: photoUrl,
-                    }),
-                toast.success("Login Success!"),
-            )
+            .then((res) => {
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: photoUrl,
+                });
+                toast.success("Login Success!");
+                navigate(state ? state : "/");
+                console.log(res);
+            })
             .catch((e) => toast.error(e.message));
         setPassVer("");
         reset();
@@ -46,13 +51,19 @@ function Register() {
 
     const handleGoogle = () => {
         googleUser()
-            .then(() => toast.success("Google Login Success!"))
+            .then(
+                () => toast.success("Google Login Success!"),
+                navigate(state ? state : "/"),
+            )
             .catch((e) => toast.error(e.message));
     };
 
     const handleGithub = () => {
         githubUser()
-            .then(() => toast.success("Github Login Success!"))
+            .then(
+                () => toast.success("Github Login Success!"),
+                navigate(state ? state : "/"),
+            )
             .catch((e) => toast.error(e.message));
     };
 
