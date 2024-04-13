@@ -24,8 +24,12 @@ function HomeCard({ homeCard }) {
 
     return (
         <>
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <div className="card bg-base-100 shadow-xl mt-7 pt-4">
+            <div data-aos="flip-down" className="overflow-hidden">
+                <div
+                    className="card bg-base-100 shadow-xl mt-7 pt-4 overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                >
                     <Swiper
                         grabCursor={true}
                         effect={"creative"}
@@ -39,13 +43,13 @@ function HomeCard({ homeCard }) {
                             },
                         }}
                         modules={[EffectCreative]}
-                        className="w-full md:w-[48vw] lg:w-[28vw] h-[70vh] md:h-[50vh] lg:h-[30vh] relative"
+                        className="w-full md:w-[48vw] lg:w-[28vw] h-[70vh] md:h-[50vh] lg:h-[30vh] relative overflow-hidden"
                     >
                         {image_urls.map((url) => (
                             <SwiperSlide key={url} title="Slide left">
                                 <div className="w-full h-full rounded">
                                     <img
-                                        className="w-full h-full rounded"
+                                        className="w-full h-full rounded overflow-hidden"
                                         src={url}
                                         alt={url}
                                     />
@@ -53,40 +57,60 @@ function HomeCard({ homeCard }) {
                             </SwiperSlide>
                         ))}
 
-                        <h1 className="absolute top-5 left-5 font-bold text-white bg-blue-800 py-1 px-3 rounded-lg z-[9999]">
+                        <h1
+                            className="absolute top-5 left-5 font-bold text-white bg-blue-800 py-1 px-3 rounded-lg z-[9999] overflow-hidden"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                        >
                             {status.toUpperCase()}
                         </h1>
                     </Swiper>
 
-                    <div className="card-body">
+                    <div
+                        className="card-body overflow-hidden"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
                         <h2 className="text-xl md:text-2xl lg:text-3xl">
                             {estate_title}{" "}
                             <small className="text-blue-700 font-bold text-xs md:text-sm lg:text-lg">
                                 {segment_name}
                             </small>
                         </h2>
-                        <p>
+                        <p data-aos="fade-up" data-aos-delay="400">
                             {description.split(" ").slice(0, 12).join(" ")}...{" "}
                             <Link className="text-blue-500">Read more</Link>
                         </p>
-                        <p>
+
+                        <p data-aos="fade-up" data-aos-delay="500">
                             <b>Price:</b> {price}
                         </p>
-                        <p>
+
+                        <p data-aos="fade-up" data-aos-delay="600">
                             <b>Area:</b> {area}
                         </p>
-                        <p>
+
+                        <p data-aos="fade-up" data-aos-delay="700">
                             <b>Location:</b> {location}
                         </p>
-                        <div>
+
+                        <div data-aos="fade-up" data-aos-delay="800">
                             <b>Facilities:</b>
-                            <ul className="pl-6 list-decimal">
+                            <ul
+                                className="pl-6 list-decimal"
+                                data-aos="fade-up"
+                                data-aos-delay="900"
+                            >
                                 {facilities.map((facilitie, id) => (
                                     <li key={id}>{facilitie}</li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="card-actions justify-end">
+                        <div
+                            className="card-actions justify-end"
+                            data-aos="fade-left"
+                            data-aos-delay="1000"
+                        >
                             <Link>
                                 <button className="btn bg-blue-700 text-white hover:bg-blue-600 ">
                                     View Property
