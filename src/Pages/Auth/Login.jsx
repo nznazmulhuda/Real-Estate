@@ -9,12 +9,13 @@ import {
     FaGoogle,
 } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { updateProfile } from "firebase/auth";
-import { auth } from "../../Firebase/Firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
     useTitle("Login");
+    const navigate = useNavigate();
+
+    const { state } = useLocation();
 
     const { emailLogin, googleUser, githubUser } = useContext(AuthContext);
     const [passVer, setPassVer] = useState("");
@@ -29,7 +30,10 @@ function Login() {
         const email = e.Email;
         const pass = e.Password;
         emailLogin(email, pass)
-            .then(() => toast.success("Login Success!"))
+            .then(() => {
+                toast.success("Login Success!");
+                navigate(state ? state : "/");
+            })
             .catch((e) => toast.error(e.message));
         setPassVer("");
         reset();
@@ -37,13 +41,19 @@ function Login() {
 
     const handleGoogle = () => {
         googleUser()
-            .then(() => toast.success("Google Login Success!"))
+            .then(
+                () => toast.success("Google Login Success!"),
+                navigate(state ? state : "/"),
+            )
             .catch((e) => toast.error(e.message));
     };
 
     const handleGithub = () => {
         githubUser()
-            .then(() => toast.success("Github Login Success!"))
+            .then(
+                () => toast.success("Github Login Success!"),
+                navigate(state ? state : "/"),
+            )
             .catch((e) => toast.error(e.message));
     };
 
