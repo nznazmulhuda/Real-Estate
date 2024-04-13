@@ -1,11 +1,12 @@
+import Banner from "./Components/Banner";
+
 function Home() {
-	return (
-		<>
-			<div>
-				<h1>Home</h1>
-			</div>
-		</>
-	);
+    return (
+        <>
+            <Banner />
+            <div></div>
+        </>
+    );
 }
 
 export default Home;

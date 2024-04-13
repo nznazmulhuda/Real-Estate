@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-
+import "../../../node_modules/animate.css/";
 function Navbar() {
     let { pathname } = useLocation();
 
@@ -61,7 +61,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className="flex justify-center lg:justify-between container mx-auto mt-8 items-center flex-col lg:flex-row gap-5">
+            <nav className="flex justify-center lg:justify-between container mx-auto mt-8 items-center flex-col lg:flex-row gap-5 animate__animated animate__fadeInUp sticky top-5">
                 <div className="flex gap-5">
                     <Link
                         to={"/"}
@@ -77,7 +77,7 @@ function Navbar() {
                         wellings
                     </Link>
 
-                    <div className="flex lg:hidden">
+                    <div className="flex md:flex lg:hidden">
                         {pathname === "/login" ? (
                             <Link
                                 to={"/register"}
@@ -142,7 +142,7 @@ function Navbar() {
                     {links}
                 </div>
 
-                <div className="hidden lg:flex">
+                <div className="hidden md:hidden lg:flex">
                     {pathname === "/login" ? (
                         <Link
                             to={"/register"}
