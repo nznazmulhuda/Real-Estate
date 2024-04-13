@@ -2,28 +2,58 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "react-dynamic-title";
 import { useForm } from "react-hook-form";
-import { FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
+import {
+    FaRegCircle,
+    FaRegCheckCircle,
+    FaGithub,
+    FaGoogle,
+} from "react-icons/fa";
+import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../Firebase/Firebase.config";
 
 function Register() {
     useTitle("Register");
+    const { createUser, googleUser, githubUser } = useContext(AuthContext);
     const [passVer, setPassVer] = useState("");
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
-    // console.log(errors);
 
     const handleRegister = (e) => {
-        e.preventDefault();
-        const form = new FormData(e.target);
-        const email = form.get("username");
-        const pass = form.get("password");
+        const name = e.Name;
+        const photoUrl = e.Photo_Url;
+        const email = e.Email;
+        const pass = e.Password;
         createUser(email, pass)
-            .then((result) => console.log(result))
-            .catch((e) => console.error(e));
-        e.target.reset();
+            .then(
+                (result) => (
+                    updateProfile(auth.currentUser, {
+                        displayName: name,
+                        photoURL: photoUrl,
+                    }),
+                    toast.success("Login Success!"),
+                    console.log(result)
+                ),
+            )
+            .catch((e) => toast.error(e.message));
+        setPassVer("");
+        reset();
+    };
+
+    const handleGoogle = () => {
+        googleUser()
+            .then(() => toast.success("Google Login Success!"))
+            .catch((e) => toast.error(e.message));
+    };
+
+    const handleGithub = () => {
+        githubUser()
+            .then(() => toast.success("Github Login Success!"))
+            .catch((e) => toast.error(e.message));
     };
 
     const test = (e) => {
@@ -34,8 +64,8 @@ function Register() {
         <>
             <div className="mx-auto container">
                 <form
-                    onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 mt-10 shadow-xl rounded-lg"
+                    onSubmit={handleSubmit(handleRegister)}
+                    className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 mt-10 rounded-lg"
                 >
                     <input
                         type="text"
@@ -132,6 +162,26 @@ function Register() {
                         data-primary="blue-600"
                         data-primary-reset="{}"
                     />
+
+                    <div className="divider py-5">
+                        <h1 className="text-lg font-lato font-bold">
+                            Continue with
+                        </h1>
+                    </div>
+
+                    <div className="text-center">
+                        <div className="flex items-center justify-center gap-5">
+                            <FaGoogle
+                                className="text-2xl cursor-pointer"
+                                onClick={handleGoogle}
+                            />
+
+                            <FaGithub
+                                className="text-2xl cursor-pointer"
+                                onClick={handleGithub}
+                            />
+                        </div>
+                    </div>
                 </form>
             </div>
         </>

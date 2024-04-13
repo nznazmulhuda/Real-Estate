@@ -4,6 +4,7 @@ import {
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
     signInWithPopup,
+    GithubAuthProvider,
 } from "firebase/auth";
 import { auth } from "./../Firebase/Firebase.config";
 
@@ -21,9 +22,16 @@ function AuthProvider({ children }) {
         return signInWithPopup(auth, provider);
     };
 
+    // Create user by github account
+    const githubUser = () => {
+        const provider = new GithubAuthProvider();
+        return signInWithPopup(auth, provider);
+    };
+
     const authInfo = {
         createUser,
         googleUser,
+        githubUser,
     };
 
     return (
