@@ -16,7 +16,7 @@ import Slide7 from "../../../assets/VR4.jpg";
 function Banner() {
     return (
         <>
-            <div className="relative mt-5 rounded-xl container mx-auto">
+            <div className="relative mt-5">
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
@@ -129,12 +129,23 @@ function Banner() {
                             </div>
 
                             <div className="w-full md:w-[40%] lg:w-[40%]">
-                                <select className="select focus:border-none focus:outline-none">
-                                    <option disabled selected>
+                                <select
+                                    className="select focus:border-none focus:outline-none"
+                                    defaultValue="select"
+                                >
+                                    <option
+                                        disabled
+                                        selected
+                                        defaultValue="status"
+                                    >
                                         All Statuses
                                     </option>
-                                    <option>For Rent</option>
-                                    <option>For Sale</option>
+                                    <option defaultValue="rent">
+                                        For Rent
+                                    </option>
+                                    <option defaultValue="sale">
+                                        For Sale
+                                    </option>
                                 </select>
                             </div>
 

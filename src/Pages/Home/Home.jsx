@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
 import Banner from "./Components/Banner";
 import HomeCard from "./Components/HomeCard";
 import useTitle from "react-dynamic-title";
 import { useEffect, useState } from "react";
+import Style from "./Home.module.css";
 
 function Home() {
     useTitle("Home");
@@ -24,7 +24,7 @@ function Home() {
                 <Banner />
             </div>
 
-            <div>
+            <div className="bg-[#F5F7FB]">
                 <div className="text-center mt-5 md:mt-7 lg:mt-10">
                     <h1 className="text-blue-700 font-bold text-xl md:text-2xl lg:text-4xl mb-4 animate__animated animate__fadeInUp animate__delay-1.2s ">
                         Housing Selection
@@ -40,6 +40,36 @@ function Home() {
                     {homeCards.map((homeCard) => (
                         <HomeCard key={homeCard.id} homeCard={homeCard} />
                     ))}
+                </div>
+
+                <div className="relative translate-y-1/2">
+                    <div
+                        className={`container mx-auto ${Style.newsletter} relative overflow-hidden flex items-center justify-between flex-col md:flex-row lg:flex-row gap-5 md:gap-0 lg:gap-0 py-10 px-5 md:py-14 md:px-7 lg:py-20 lg:px-16`}
+                    >
+                        <div>
+                            <h3 className="text-white font-lato text-sm font-semibold uppercase">
+                                newsletter
+                            </h3>
+
+                            <h1 className="text-xl font-semibold text-white font-josefin">
+                                Sign up for newsletter and get latest news and
+                                update
+                            </h1>
+                        </div>
+
+                        <div className="bg-white p-2 rounded-md w-full md:w-[50%] lg:w-[40%] flex justify-between">
+                            <input
+                                type="email"
+                                placeholder="Enter Your Email"
+                                className="text-[#666] placeholder:text-sm font-semibold font-lato outline-none border-none bg-transparent pl-3 w-full"
+                            />
+                            <button className="bg-[#3270FC] rounded px-8 text-white py-2">
+                                Subscribe
+                            </button>
+                        </div>
+
+                        <div className="absolute w-[300px] h-[300px] bg-[#ffffff46] -bottom-[140px] rounded-full -right-[80px]"></div>
+                    </div>
                 </div>
             </div>
         </>

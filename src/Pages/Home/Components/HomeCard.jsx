@@ -7,6 +7,14 @@ import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { IoMdGitCompare } from "react-icons/io";
+import { BiSave } from "react-icons/bi";
+import { useState } from "react";
+import { FaLocationDot } from "react-icons/fa6";
+import Area from "../../../assets/area.png";
+import Bed from "../../../assets/bed.png";
+import Bath from "../../../assets/bath.png";
+
 AOS.init();
 
 function HomeCard({ homeCard }) {
@@ -17,15 +25,17 @@ function HomeCard({ homeCard }) {
         price,
         area,
         location,
-        facilities,
+        bedrooms,
+        bathrooms,
         image_urls,
         status,
         id,
     } = homeCard;
+    const [hov, setHov] = useState(false);
 
     return (
         <>
-            <div data-aos="flip-down" className="overflow-hidden rounded-xl">
+            <div data-aos="flip-down" className="overflow-hidden rounded-xl shadow-xl">
                 <div
                     className="card bg-base-100 shadow-2xl mt-7 pt-4 overflow-hidden rounded-xl"
                     data-aos="fade-up"
@@ -45,86 +55,178 @@ function HomeCard({ homeCard }) {
                         }}
                         modules={[EffectCreative]}
                         className="w-full md:w-[48vw] lg:w-[28vw] h-[70vh] md:h-[50vh] lg:h-[30vh] relative overflow-hidden"
+                        onMouseEnter={() => setHov(true)}
+                        onMouseLeave={() => setHov(false)}
                     >
                         {image_urls.map((url) => (
                             <SwiperSlide key={url} title="Slide left">
-                                <div className="w-full h-full rounded-xl">
+                                <div className="w-full h-full rounded-xl bg-black">
                                     <img
-                                        className="w-full h-full rounded-xl overflow-hidden"
+                                        className={`w-full h-full rounded-xl overflow-hidden cursor-pointer ${
+                                            hov ? "opacity-70" : "opacity-100"
+                                        } transition-all ease-in`}
                                         src={url}
                                         alt={url}
+                                        onMouseEnter={() => setHov(true)}
+                                        onMouseLeave={() => setHov(false)}
                                     />
                                 </div>
                             </SwiperSlide>
                         ))}
 
-                        <h1
-                            className="absolute top-5 left-5 font-bold text-white bg-blue-800 py-1 px-3 rounded-lg z-[9999] overflow-hidden"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
+                        <div
+                            className="absolute top-10 z-[9999] left-5 flex gap-5 overflow-hidden"
+                            onMouseEnter={() => setHov(true)}
+                            onMouseLeave={() => setHov(false)}
                         >
-                            {status.toUpperCase()}
-                        </h1>
+                            <h1
+                                className="font-bold text-white bg-[#3270FC] py-2 px-5 rounded-lg cursor-pointer"
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                                onMouseEnter={() => setHov(true)}
+                                onMouseLeave={() => setHov(false)}
+                            >
+                                {status.toUpperCase()}
+                            </h1>
+
+                            <h1
+                                className="font-bold text-white bg-[#3270FC] py-2 px-5 rounded-lg cursor-pointer"
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                                onMouseEnter={() => setHov(true)}
+                                onMouseLeave={() => setHov(false)}
+                            >
+                                {segment_name.toUpperCase()}
+                            </h1>
+                        </div>
+
+                        <div
+                            className="absolute top-10 z-[9999] right-5 flex w-48 items-end flex-col gap-5 overflow-hidden"
+                            onMouseEnter={() => setHov(true)}
+                            onMouseLeave={() => setHov(false)}
+                        >
+                            <div
+                                className="bg-gray-200 w-9 h-9 rounded relative tooltip tooltip-left"
+                                data-tip="Save"
+                                data-aos="fade-up"
+                                data-aos-delay="300"
+                                onMouseEnter={() => setHov(true)}
+                                onMouseLeave={() => setHov(false)}
+                            >
+                                <BiSave className="cursor-pointer hover:text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl" />
+                            </div>
+
+                            <div
+                                className="bg-gray-200 w-9 h-9 rounded relative tooltip tooltip-left"
+                                data-tip="Compare"
+                                data-aos="fade-up"
+                                data-aos-delay="300"
+                                onMouseEnter={() => setHov(true)}
+                                onMouseLeave={() => setHov(false)}
+                            >
+                                <IoMdGitCompare className="cursor-pointer hover:text-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl" />
+                            </div>
+                        </div>
+
+                        <div
+                            className="absolute bottom-5 z-[9999] left-5 flex items-center gap-2 overflow-hidden"
+                            data-aos="fade-up"
+                            data-aos-delay="350"
+                            onMouseEnter={() => setHov(true)}
+                            onMouseLeave={() => setHov(false)}
+                        >
+                            <FaLocationDot className="text-blue-500 text-lg" />
+                            <h1 className="text-white font-bold text-lg font-lato">
+                                {location}
+                            </h1>
+                        </div>
                     </Swiper>
 
                     <div
-                        className="card-body overflow-hidden"
+                        className="card-body overflow-hidden w-full"
                         data-aos="fade-up"
-                        data-aos-delay="300"
+                        data-aos-delay="400"
                     >
-                        <h2 className="text-xl md:text-2xl lg:text-3xl">
-                            {estate_title}{" "}
-                            <small className="text-blue-700 font-bold text-xs md:text-sm lg:text-lg">
-                                {segment_name}
-                            </small>
-                        </h2>
-                        <p data-aos="fade-up" data-aos-delay="400">
-                            {description.split(" ").slice(0, 12).join(" ")}...{" "}
-                            <Link
-                                to={`/details/${id}/${estate_title
-                                    .split(" ")
-                                    .join("+")}`}
-                                className="text-blue-500"
+                        <Link
+                            to={`/details/${id}/${estate_title
+                                .split(" ")
+                                .join("+")}`}
+                            className="text-xl text-[#757B8D] hover:text-black md:text-2xl lg:text-3xl"
+                        >
+                            {estate_title}
+                        </Link>
+
+                        <p
+                            className="text-[#3270FC] text-xl font-bold font-josefin"
+                            data-aos="fade-up"
+                            data-aos-delay="500"
+                        >
+                            {price}
+                        </p>
+
+                        <p
+                            className="text-[#878C9F] text-sm leading-6 font-lato w-[70%]"
+                            data-aos="fade-up"
+                            data-aos-delay="600"
+                        >
+                            {description.split(" ").slice(0, 12).join(" ")}...
+                        </p>
+
+                        <div className="flex gap-5 items-center">
+                            <div
+                                className="flex items-end gap-2"
+                                data-aos="fade-left"
+                                data-aos-delay="700"
                             >
-                                Read more
-                            </Link>
-                        </p>
+                                <div>
+                                    <img src={Bed} alt="" />
+                                </div>
+                                <p className="text-[#333333] font-semibold text-sm font-lato">
+                                    {bedrooms}
+                                </p>
+                            </div>
 
-                        <p data-aos="fade-up" data-aos-delay="500">
-                            <b>Price:</b> {price}
-                        </p>
+                            <div
+                                className="flex items-end gap-2"
+                                data-aos="fade-right"
+                                data-aos-delay="800"
+                            >
+                                <div>
+                                    <img src={Bath} alt="" />
+                                </div>
+                                <p className="text-[#333333] font-semibold text-sm font-lato">
+                                    {bathrooms}
+                                </p>
+                            </div>
 
-                        <p data-aos="fade-up" data-aos-delay="600">
-                            <b>Area:</b> {area}
-                        </p>
-
-                        <p data-aos="fade-up" data-aos-delay="700">
-                            <b>Location:</b> {location}
-                        </p>
-
-                        <div data-aos="fade-up" data-aos-delay="800">
-                            <b>Facilities:</b>
-                            <ul
-                                className="pl-6 list-decimal"
-                                data-aos="fade-up"
+                            <div
+                                className="flex items-end gap-2"
+                                data-aos="fade-right"
                                 data-aos-delay="900"
                             >
-                                {facilities.map((facilitie, id) => (
-                                    <li key={id}>{facilitie}</li>
-                                ))}
-                            </ul>
+                                <div>
+                                    <img src={Area} alt="" />
+                                </div>
+                                <p className="text-[#333333] font-semibold text-sm font-lato">
+                                    {area}
+                                </p>
+                            </div>
                         </div>
+
+                        <div className="divider my-0"></div>
+
                         <div
-                            className="card-actions justify-end"
-                            data-aos="fade-left"
+                            className="card-actions w-full"
+                            data-aos="fade-right"
                             data-aos-delay="1000"
                         >
                             <Link
                                 to={`/details/${id}/${estate_title
                                     .split(" ")
                                     .join("+")}`}
+                                className="w-full"
                             >
-                                <button className="btn bg-blue-700 text-white hover:bg-blue-600 ">
+                                <button className="btn w-full bg-blue-700 text-white text-xl hover:bg-blue-600 ">
                                     View Property
                                 </button>
                             </Link>
