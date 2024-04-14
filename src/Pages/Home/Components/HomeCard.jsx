@@ -35,9 +35,9 @@ function HomeCard({ homeCard }) {
 
     return (
         <>
-            <div data-aos="flip-down" className="overflow-hidden rounded-xl shadow-xl">
+            <div data-aos="flip-down" className="overflow-hidden">
                 <div
-                    className="card bg-base-100 shadow-2xl mt-7 pt-4 overflow-hidden rounded-xl"
+                    className="card shadow-2xl mt-7 pt-4 overflow-hidden rounded-xl bg-transparent"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
@@ -101,7 +101,7 @@ function HomeCard({ homeCard }) {
                         </div>
 
                         <div
-                            className="absolute top-10 z-[9999] right-5 flex w-48 items-end flex-col gap-5 overflow-hidden"
+                            className="absolute top-10 z-[9999] right-10 flex w-48 items-end flex-col gap-5 overflow-hidden"
                             onMouseEnter={() => setHov(true)}
                             onMouseLeave={() => setHov(false)}
                         >

@@ -3,15 +3,27 @@ import HomeCard from "./Components/HomeCard";
 import useTitle from "react-dynamic-title";
 import { useEffect, useState } from "react";
 import Style from "./Home.module.css";
+import Feedback from "./Components/Feedback";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 function Home() {
     useTitle("Home");
-    // const homeCards = useLoaderData();
     const [homeCards, setHomeCards] = useState([]);
+    const [feedbacks, setFeedbacks] = useState([]);
     useEffect(() => {
         fetch("./ResidentialsData.json")
             .then((res) => res.json())
             .then((data) => setHomeCards(data));
+    }, []);
+
+    useEffect(() => {
+        fetch("./feedback.json")
+            .then((res) => res.json())
+            .then((data) => setFeedbacks(data));
     }, []);
 
     return (
@@ -24,8 +36,8 @@ function Home() {
                 <Banner />
             </div>
 
-            <div className="bg-[#F5F7FB]">
-                <div className="text-center mt-5 md:mt-7 lg:mt-10">
+            <div className="bg-white">
+                <div className="text-center pt-5 md:pt-7 lg:pt-10">
                     <h1 className="text-blue-700 font-bold text-xl md:text-2xl lg:text-4xl mb-4 animate__animated animate__fadeInUp animate__delay-1.2s ">
                         Housing Selection
                     </h1>
@@ -40,6 +52,29 @@ function Home() {
                     {homeCards.map((homeCard) => (
                         <HomeCard key={homeCard.id} homeCard={homeCard} />
                     ))}
+                </div>
+
+                <div className="mt-20">
+                    <h1 className="text-[#144273] font-bold text-3xl leading-7 font-josefin text-center mb-4">
+                        What Our Clients Say
+                    </h1>
+                    <Swiper
+                        slidesPerView={4}
+                        centeredSlides={true}
+                        spaceBetween={30}
+                        grabCursor={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Pagination]}
+                        className=""
+                    >
+                        {feedbacks.map((feedback) => (
+                            <SwiperSlide key={feedback.id}>
+                                <Feedback feedback={feedback} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
 
                 <div className="relative translate-y-1/2">

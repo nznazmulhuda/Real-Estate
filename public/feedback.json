@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "client_pic": "https://i.ibb.co/qk9mrwQ/1.jpg",
+        "client_name": "John Doe",
+        "rating": 4.7,
+        "client_feedback": "Exceptional service! I couldn't be happier with the assistance I received from XYZ Realty. They were attentive to my needs and helped me find my dream home in no time. The entire process was smooth and stress-free. I highly recommend their services to anyone in search of a new home.",
+        "feedback_via": "Facebook"
+    },
+    {
+        "id": 2,
+        "client_pic": "https://i.ibb.co/j3kPysd/2.jpg",
+        "client_name": "Alice Johnson",
+        "rating": 4.5,
+        "client_feedback": "I had a wonderful experience with XYZ Realty. Their team was professional, courteous, and went above and beyond to help me find the perfect home. They listened to my preferences and provided personalized recommendations that exceeded my expectations. I highly recommend their services to anyone in need of real estate assistance.",
+        "feedback_via": "Instagram"
+    },
+    {
+        "id": 3,
+        "client_pic": "https://i.ibb.co/C5z0H1z/3.jpg",
+        "client_name": "David Smith",
+        "rating": 4.2,
+        "client_feedback": "I recently purchased a home with the help of XYZ Realty, and I couldn't be happier with the outcome. From the initial consultation to the closing process, their team was professional, knowledgeable, and supportive every step of the way. I highly recommend their services to anyone in need of real estate expertise.",
+        "feedback_via": "Twitter"
+    },
+    {
+        "id": 4,
+        "client_pic": "https://i.ibb.co/HGMZbc7/4.jpg",
+        "client_name": "Emma Wilson",
+        "rating": 4.8,
+        "client_feedback": "My experience with XYZ Realty was outstanding. Their team was responsive, proactive, and dedicated to helping me find the perfect home. They understood my preferences and provided valuable insights throughout the process. I'm thrilled with my new home and highly recommend their services to others.",
+        "feedback_via": "Facebook"
+    },
+    {
+        "id": 5,
+        "client_pic": "https://i.ibb.co/LzCythx/5.jpg",
+        "client_name": "Michael Brown",
+        "rating": 4.3,
+        "client_feedback": "I had a great experience working with XYZ Realty. Their team was professional, knowledgeable, and easy to work with. They guided me through the entire process and helped me find a home that met all of my needs. I highly recommend their services to anyone in need of real estate assistance.",
+        "feedback_via": "Twitter"
+    },
+    {
+        "id": 6,
+        "client_pic": "https://i.ibb.co/2Kv2DVz/6.jpg",
+        "client_name": "Sarah Miller",
+        "rating": 4.9,
+        "client_feedback": "XYZ Realty exceeded my expectations in every way. Their team was attentive, proactive, and dedicated to helping me find the perfect home. They listened to my preferences and provided personalized recommendations that aligned with my needs. I'm thrilled with my new home and grateful for their assistance.",
+        "feedback_via": "Instagram"
+    },
+    {
+        "id": 7,
+        "client_pic": "https://i.ibb.co/qk9mrwQ/1.jpg",
+        "client_name": "Ryan Taylor",
+        "rating": 4.6,
+        "client_feedback": "I had a fantastic experience working with XYZ Realty. Their team was knowledgeable, professional, and responsive to my needs. They made the home buying process smooth and stress-free from start to finish. I highly recommend their services to anyone in search of a new home.",
+        "feedback_via": "Facebook"
+    },
+    {
+        "id": 8,
+        "client_pic": "https://i.ibb.co/j3kPysd/2.jpg",
+        "client_name": "Emily Harris",
+        "rating": 4.4,
+        "client_feedback": "Working with XYZ Realty was a pleasure from start to finish. Their team was friendly, efficient, and always available to answer any questions I had. They provided valuable guidance throughout the process and helped me find a home that exceeded my expectations. I highly recommend their services to others.",
+        "feedback_via": "Twitter"
+    },
+    {
+        "id": 9,
+        "client_pic": "https://i.ibb.co/C5z0H1z/3.jpg",
+        "client_name": "Daniel Clark",
+        "rating": 4.7,
+        "client_feedback": "I recently worked with XYZ Realty to purchase a new home, and I couldn't be happier with the experience. Their team was professional, knowledgeable, and dedicated to helping me find the perfect home. They guided me through every step of the process and provided valuable insights along the way. I highly recommend their services to anyone in need of real estate expertise.",
+        "feedback_via": "Instagram"
+    }
+]

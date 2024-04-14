@@ -129,23 +129,9 @@ function Banner() {
                             </div>
 
                             <div className="w-full md:w-[40%] lg:w-[40%]">
-                                <select
-                                    className="select focus:border-none focus:outline-none"
-                                    defaultValue="select"
-                                >
-                                    <option
-                                        disabled
-                                        selected
-                                        defaultValue="status"
-                                    >
-                                        All Statuses
-                                    </option>
-                                    <option defaultValue="rent">
-                                        For Rent
-                                    </option>
-                                    <option defaultValue="sale">
-                                        For Sale
-                                    </option>
+                                <select className="select focus:border-none focus:outline-none">
+                                    <option value="rent">For Rent</option>
+                                    <option value="sale">For Sale</option>
                                 </select>
                             </div>
 
