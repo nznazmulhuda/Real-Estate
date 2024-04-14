@@ -71,6 +71,21 @@ function Navbar() {
                     Contact
                 </NavLink>
             </button>
+
+            {user ? (
+                <button className="animate__animated animate__fadeInLeft">
+                    <NavLink
+                        to={"/profile-edit"}
+                        className={({ isActive }) =>
+                            isActive
+                                ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                                : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                        }
+                    >
+                        Update Profile
+                    </NavLink>
+                </button>
+            ) : null}
         </>
     );
 
@@ -139,6 +154,24 @@ function Navbar() {
                     Contact
                 </NavLink>
             </button>
+
+            {user ? (
+                <button
+                    className="animate__animated animate__fadeInLeft"
+                    onClick={() => setResponsive(false)}
+                >
+                    <NavLink
+                        to={"/profile-edit"}
+                        className={({ isActive }) =>
+                            isActive
+                                ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                                : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                        }
+                    >
+                        Update Profile
+                    </NavLink>
+                </button>
+            ) : null}
         </>
     );
 
@@ -184,36 +217,85 @@ function Navbar() {
                             {links}
                         </div>
 
-                        {/* Login & Sign in */}
+                        {/* Login & Log In */}
                         <div className="px-3 md:px-3 lg:px-6 animate__animated animate__fadeInLeft">
-                            <div className="flex items-center gap-3">
-                                <img
-                                    src={Person}
-                                    alt=""
-                                    className="hidden md:hidden lg:flex"
-                                />
-                                <button className="text-[#144273] font-lato font-semibold leading-[40px] mt-1 hidden md:hidden lg:flex">
-                                    Sign In
-                                </button>
+                            {!user ? (
+                                <div className="flex items-center gap-3">
+                                    <img
+                                        src={Person}
+                                        alt=""
+                                        className="hidden md:hidden lg:flex"
+                                    />
+                                    <Link to={"/login"} state={pathname}>
+                                        <button className="text-[#144273] font-lato font-semibold leading-[40px] mt-1 hidden md:hidden lg:flex">
+                                            Log In
+                                        </button>
+                                    </Link>
 
-                                <button className="flex md:flex lg:hidden ">
-                                    <BsPerson className="text-[#3270FC] text-2xl" />
-                                </button>
-                            </div>
+                                    <Link to={"/login"} state={pathname}>
+                                        <button className="flex md:flex lg:hidden ">
+                                            <BsPerson className="text-[#3270FC] text-2xl" />
+                                        </button>
+                                    </Link>
+                                </div>
+                            ) : (
+                                <div
+                                    className={`w-7 h-7 md:w-10 md:h-10 lg:w-14 lg:h-14 border lg:p-2 rounded-full dropdown dropdown-hover dropdown-bottom dropdown-end`}
+                                >
+                                    <img
+                                        className="rounded-full w-full h-full"
+                                        src={user.photoURL}
+                                        alt=""
+                                    />
+
+                                    <ul
+                                        tabIndex={0}
+                                        className="dropdown-content z-[99999] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-3 hidden lg:flex"
+                                    >
+                                        <li>
+                                            <button className="btn btn-primary text-lg font-bold font-josefin">
+                                                {user.displayName}
+                                            </button>
+                                        </li>
+
+                                        <li>
+                                            <Link
+                                                to={"/profile"}
+                                                className="w-full btn btn-primary text-lg font-bold font-josefin"
+                                            >
+                                                Profile <CgProfile />
+                                            </Link>
+                                        </li>
+
+                                        <div className="divider my-0"></div>
+
+                                        <li>
+                                            <button
+                                                className="w-full btn btn-ghost text-lg font-bold font-josefin"
+                                                onClick={signOutUser}
+                                            >
+                                                Sign Out <VscSignOut />
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )}
                         </div>
 
                         {/* Add Listing */}
-                        <div className="pl-3 md:pl-3 lg:pl-6 hidden md:hidden lg:flex animate__animated animate__fadeInLeft">
-                            <button className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]">
-                                <div className="w-6 h-6 rounded-full bg-[#FFFFFF33] relative">
-                                    <FaPlus className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white" />
-                                </div>
+                        {user ? (
+                            <div className="pl-3 md:pl-3 lg:pl-6 hidden md:hidden lg:flex animate__animated animate__fadeInLeft">
+                                <button className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]">
+                                    <div className="w-6 h-6 rounded-full bg-[#FFFFFF33] relative">
+                                        <FaPlus className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white" />
+                                    </div>
 
-                                <h1 className="text-white font-lato text-sm font-semibold">
-                                    Add Listing
-                                </h1>
-                            </button>
-                        </div>
+                                    <h1 className="text-white font-lato text-sm font-semibold">
+                                        Add Listing
+                                    </h1>
+                                </button>
+                            </div>
+                        ) : null}
 
                         {/* responsive search icon */}
                         <div className="animate__animated animate__fadeInLeft px-3 flex md:hidden lg:hidden">
@@ -240,7 +322,10 @@ function Navbar() {
 
                         {/* Menu bar */}
                         <div className="px-3 flex md:flex lg:hidden animate__animated animate__fadeInLeft">
-                            <button className="bg-[#3270FC] text-white py-1 px-1 rounded-md">
+                            <button
+                                className="bg-[#3270FC] text-white py-1 px-1 rounded-md"
+                                onBlur={() => setResponsive(false)}
+                            >
                                 {responsive ? (
                                     <RxCross2
                                         onClick={() =>
@@ -260,30 +345,41 @@ function Navbar() {
 
                     {/* Responsive tablet */}
                     <div
-                        className={`absolute right-0 top-10 ${
+                        className={`absolute right-0 top-14 ${
                             responsive ? "z-[99999999]" : "z-0"
                         } bg-white rounded-lg p-4 flex-col animate__animated ${
                             responsive
                                 ? "flex animate__fadeInUp"
                                 : "animate__fadeOutDown lg:hidden"
-                        }`}
+                        } w-80`}
                     >
                         <div className="flex flex-col items-start justify-start p-5 pb-0">
                             {resLinks}
                         </div>
 
-                        <div className="divider my-0 "></div>
+                        <div className="divider my-0"></div>
 
-                        {/* Add Listing */}
-                        <button className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]">
-                            <div className="w-5 md:w-6 h-5 md:h-6 rounded-full bg-[#FFFFFF33] relative">
-                                <FaPlus className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-xs md:text-sm" />
-                            </div>
+                        {user ? (
+                            <>
+                                <Link
+                                    onClick={() => setResponsive(false)}
+                                    to={"/profile"}
+                                    className="w-full btn btn-primary text-lg font-bold font-josefin"
+                                >
+                                    Profile <CgProfile />
+                                </Link>
 
-                            <h1 className="text-white font-lato text-xs md:text-sm font-semibold">
-                                Add Listing
-                            </h1>
-                        </button>
+                                <button
+                                    onClick={
+                                        (() => setResponsive(false),
+                                        signOutUser)
+                                    }
+                                    className="w-full btn btn-ghost text-lg font-bold font-josefin"
+                                >
+                                    Sign Out <VscSignOut />
+                                </button>
+                            </>
+                        ) : null}
                     </div>
                 </nav>
             </div>

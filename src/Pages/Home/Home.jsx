@@ -61,7 +61,7 @@ function Home() {
                     <Swiper
                         slidesPerView={4}
                         centeredSlides={true}
-                        spaceBetween={30}
+                        spaceBetween={257}
                         grabCursor={true}
                         pagination={{
                             clickable: true,

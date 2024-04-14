@@ -6,7 +6,7 @@ function Feedback({ feedback }) {
         feedback;
     return (
         <>
-            <div className="bg-white shadow-xl py-7 px-8 rounded-lg justify-between h-[35vh] flex-col flex items-start mb-14 mt-5">
+            <div className="bg-white shadow-xl py-7 px-8 rounded-lg justify-between h-[75vh] md:h-[55vh] lg:h-[35vh] flex-col flex items-start mb-14 mt-5 w-[90vw] md:w-[60vw] lg:w-[20vw]">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-8">
                         <div className="w-[60px] h-[60px] rounded-full">

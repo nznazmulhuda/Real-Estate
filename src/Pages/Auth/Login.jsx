@@ -64,7 +64,7 @@ function Login() {
 
     return (
         <>
-            <div className="mx-auto container">
+            <div className="mx-auto container mb-20">
                 <form
                     onSubmit={handleSubmit(handleRegister)}
                     className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 md:p-7 lg:p-10 mt-10 rounded-lg shadow-lg"

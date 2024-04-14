@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 import tri from "../../assets/tri.png";
 import { IoMailOutline } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
@@ -10,9 +7,14 @@ import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
 
 function Footer() {
+    const { pathname } = useLocation();
     return (
         <>
-            <div className="bg-[#151b24] rounded-lg pt-[100px]">
+            <div
+                className={`bg-[#151b24] rounded-lg pt-[100px] ${
+                    pathname === "/" ? "pt-[100px]" : "pt-[30px] mt-10"
+                }`}
+            >
                 <footer className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 container mx-auto mt-14 pb-12 text-center md:text-left lg:text-left">
                     <div>
                         <Link
