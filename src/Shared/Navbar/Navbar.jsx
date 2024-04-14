@@ -233,7 +233,6 @@ function Navbar() {
                                     resSearch ? "flex" : "hidden"
                                 } animate__animated animate__fadeInDown`}
                                 onBlur={() => setResSearch(false)}
-                                autoFocus={() => resSearch && true}
                             />
                         </div>
                     </div>
