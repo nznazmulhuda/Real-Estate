@@ -12,12 +12,15 @@ import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 
 function Register() {
     useTitle("Register");
 
     const { state } = useLocation();
     const navigate = useNavigate();
+    const [passVisible, setPassVisible] = useState(false);
 
     const { createUser, googleUser, githubUser } = useContext(AuthContext);
     const [passVer, setPassVer] = useState("");
@@ -123,19 +126,32 @@ function Register() {
                         </p>
                     )}
 
-                    <input
-                        type="password"
-                        placeholder="Enter your password"
-                        onKeyUp={test}
-                        className={`outline-none px-3 border-b-2 pb-2 pt-2 mb-4 ${
-                            errors.Password && `border-red-500`
-                        }`}
-                        {...register("Password", {
-                            required: true,
-                            min: 6,
-                            pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
-                        })}
-                    />
+                    <div className="flex items-center justify-between relative">
+                        <input
+                            type={passVisible ? "text" : "password"}
+                            placeholder="Enter your password"
+                            onKeyUp={test}
+                            className={`outline-none px-3 border-b-2 pb-2 pt-2 mb-4 ${
+                                errors.Password && `border-red-500`
+                            } w-full`}
+                            {...register("Password", {
+                                required: true,
+                                min: 6,
+                                pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                            })}
+                        />
+                        {passVisible ? (
+                            <FaRegEye
+                                onClick={() => setPassVisible(!passVisible)}
+                                className="absolute right-3"
+                            />
+                        ) : (
+                            <FaRegEyeSlash
+                                onClick={() => setPassVisible(!passVisible)}
+                                className="absolute right-3"
+                            />
+                        )}
+                    </div>
 
                     <div className="pl-3">
                         <p className="flex items-center gap-2">

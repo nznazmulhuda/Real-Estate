@@ -49,7 +49,7 @@ function Profile() {
                                 defaultValue={user.email}
                                 readOnly
                             />{" "}
-                            <span className="text-xs md:text-sm lg:text-lg text-blue-500 ml-3">
+                            <span className="text-xs md:text-sm lg:text-lg text-blue-500 ml-3 hidden md:flex lg:flex">
                                 {user.emailVerified
                                     ? "Verified"
                                     : "Not verified"}
@@ -75,7 +75,7 @@ function Profile() {
                     <div className="flex items-center justify-center gap-5">
                         <div className="text-center mt-10">
                             <Link to={"/profile-edit"}>
-                                <button className="btn text-lg md:text-xl lg:text-xl">
+                                <button className="btn text-sm md:text-lg lg:text-xl">
                                     Update Profile
                                 </button>
                             </Link>
@@ -84,7 +84,7 @@ function Profile() {
                         <div className="text-center mt-10">
                             <button
                                 onClick={handleDeleteAccount}
-                                className="btn btn-primary text-lg md:text-xl lg:text-xl"
+                                className="btn btn-primary text-sm md:text-lg lg:text-xl"
                             >
                                 Delete Account
                             </button>

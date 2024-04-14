@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import useTitle from "react-dynamic-title";
 import { useForm } from "react-hook-form";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 import {
     FaRegCircle,
     FaRegCheckCircle,
@@ -14,9 +16,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 function Login() {
     useTitle("Login");
     const navigate = useNavigate();
-
+    const [passVisible, setPassVisible] = useState(false);
     const { state } = useLocation();
-
     const { emailLogin, googleUser, githubUser } = useContext(AuthContext);
     const [passVer, setPassVer] = useState("");
     const {
@@ -83,19 +84,32 @@ function Login() {
                         </p>
                     )}
 
-                    <input
-                        type="password"
-                        placeholder="Enter your password"
-                        onKeyUp={test}
-                        className={`outline-none px-3 border-b-2 pb-2 pt-2 mb-4 ${
-                            errors.Password && `border-red-500`
-                        }`}
-                        {...register("Password", {
-                            required: true,
-                            min: 6,
-                            pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
-                        })}
-                    />
+                    <div className="flex items-center justify-between relative">
+                        <input
+                            type={passVisible ? "text" : "password"}
+                            placeholder="Enter your password"
+                            onKeyUp={test}
+                            className={`outline-none px-3 border-b-2 pb-2 pt-2 mb-4 ${
+                                errors.Password && `border-red-500`
+                            } w-full`}
+                            {...register("Password", {
+                                required: true,
+                                min: 6,
+                                pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                            })}
+                        />
+                        {passVisible ? (
+                            <FaRegEye
+                                onClick={() => setPassVisible(!passVisible)}
+                                className="absolute right-3"
+                            />
+                        ) : (
+                            <FaRegEyeSlash
+                                onClick={() => setPassVisible(!passVisible)}
+                                className="absolute right-3"
+                            />
+                        )}
+                    </div>
 
                     <div className="pl-3">
                         <p className="flex items-center gap-2">
