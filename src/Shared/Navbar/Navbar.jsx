@@ -1,61 +1,139 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "../../../node_modules/animate.css/";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import { VscSignOut } from "react-icons/vsc";
 import { CgProfile } from "react-icons/cg";
+import { FaSearch } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { BsPerson } from "react-icons/bs";
+import Person from "../../assets/Icon.png";
+import { IoIosMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
+import "animate.css";
+
 function Navbar() {
     let { pathname } = useLocation();
     const { user, signOutUser } = useContext(AuthContext);
+    const [responsive, setResponsive] = useState(false);
+    const [resSearch, setResSearch] = useState(false);
 
     const links = (
         <>
-            <button>
+            <button className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/"}
                     className={({ isActive }) =>
                         isActive
-                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
-                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
                     }
                 >
                     Home
                 </NavLink>
             </button>
 
-            <button>
+            <button className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/blog"}
                     className={({ isActive }) =>
                         isActive
-                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
-                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
                     }
                 >
                     Blog
                 </NavLink>
             </button>
 
-            <button>
+            <button className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/about"}
                     className={({ isActive }) =>
                         isActive
-                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
-                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
                     }
                 >
                     About
                 </NavLink>
             </button>
 
-            <button>
+            <button className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/contact"}
                     className={({ isActive }) =>
                         isActive
-                            ? `bg-blue-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap border border-blue-700 rounded-md shadow-sm hover:bg-blue-600`
-                            : `inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-black whitespace-no-wrap  border border-blue-700 rounded-md shadow-sm hover:bg-blue-700 hover:text-white`
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                    }
+                >
+                    Contact
+                </NavLink>
+            </button>
+        </>
+    );
+
+    const resLinks = (
+        <>
+            <button
+                className="animate__animated animate__fadeInLeft"
+                onClick={() => setResponsive(false)}
+            >
+                <NavLink
+                    to={"/"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                    }
+                >
+                    Home
+                </NavLink>
+            </button>
+
+            <button
+                className="animate__animated animate__fadeInLeft"
+                onClick={() => setResponsive(false)}
+            >
+                <NavLink
+                    to={"/blog"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                    }
+                >
+                    Blog
+                </NavLink>
+            </button>
+
+            <button
+                className="animate__animated animate__fadeInLeft"
+                onClick={() => setResponsive(false)}
+            >
+                <NavLink
+                    to={"/about"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                    }
+                >
+                    About
+                </NavLink>
+            </button>
+
+            <button
+                className="animate__animated animate__fadeInLeft"
+                onClick={() => setResponsive(false)}
+            >
+                <NavLink
+                    to={"/contact"}
+                    className={({ isActive }) =>
+                        isActive
+                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
                     }
                 >
                     Contact
@@ -66,195 +144,144 @@ function Navbar() {
 
     return (
         <>
-            <div className="sticky top-0 z-[9999] bg-white">
-                <nav className="flex justify-center lg:justify-between mt-7 items-center flex-col lg:flex-row gap-5 animate__animated animate__fadeInUp container mx-auto py-1">
-                    <div className="flex gap-5">
+            <nav className="flex justify-between items-center container mx-auto relative top-0 border-b py-2">
+                {/* left side */}
+                <div className="flex items-center gap-0 md:gap-7 lg:gap-14 w-1/2">
+                    {/* Logo */}
+                    <div className="animate__animated animate__fadeInLeft">
                         <Link
                             to={"/"}
-                            className="text-2xl font-lato font-bold cursor-pointer"
+                            className="lg:text-2xl font-lato font-bold cursor-pointer"
                         >
-                            <span className="text-blue-600 font-extrabold text-4xl">
+                            <span className="text-blue-600 font-extrabold lg:text-4xl">
                                 D
                             </span>
                             ream{" "}
-                            <span className="text-blue-600 font-extrabold text-4xl">
+                            <span className="text-blue-600 font-extrabold lg:text-4xl">
                                 D
                             </span>
                             wellings
                         </Link>
-
-                        <div className="flex md:flex lg:hidden">
-                            {pathname === "/login" ? (
-                                <Link
-                                    to={"/register"}
-                                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
-                                >
-                                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
-                                        <svg
-                                            className="w-6 h-6"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                            ></path>
-                                        </svg>
-                                    </span>
-                                    <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
-                                        Register
-                                    </span>
-                                    <span className="relative invisible">
-                                        Register
-                                    </span>
-                                </Link>
-                            ) : (
-                                <Link
-                                    to={"/login"}
-                                    className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
-                                >
-                                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
-                                        <svg
-                                            className="w-6 h-6"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                            ></path>
-                                        </svg>
-                                    </span>
-                                    <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
-                                        Login
-                                    </span>
-                                    <span className="relative invisible">
-                                        login
-                                    </span>
-                                </Link>
-                            )}
-                        </div>
                     </div>
 
-                    <div className="flex gap-4 flex-wrap justify-center">
+                    {/* Search bar */}
+                    <div className="hidden md:flex lg:flex items-center justify-center gap-2 md:gap-3 lg:gap-4 bg-[#F5F7FB] rounded-[40px] border md:w-[35%] lg:w-[25%] animate__animated animate__fadeInLeft">
+                        <FaSearch className="text-[#3270FC]" />
+
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="text-[#144273] font-lato text-sm leading-8 md:leading-9 lg:leading-10 font-medium outline-none bg-transparent border-nonef placeholder:text-[#144273] placeholder:font-medium placeholder:leading-10 w-[30%] md:w-[40%] lg:w-[50%]"
+                        />
+                    </div>
+                </div>
+
+                {/* Right side */}
+                <div className="flex items-center divide-x w-1/2 justify-end">
+                    {/* Links */}
+                    <div className="items-center gap-5 pr-10 hidden md:hidden lg:flex animate__animated animate__fadeInLeft">
                         {links}
                     </div>
 
-                    <div className="hidden md:hidden lg:flex">
-                        {user ? (
-                            <div className="flex items-center">
-                                <h1 className="btn font-bold text-lg">
-                                    {user.displayName}
-                                </h1>
+                    {/* Login & Sign in */}
+                    <div className="px-3 md:px-3 lg:px-6 animate__animated animate__fadeInLeft">
+                        <div className="flex items-center gap-3">
+                            <img
+                                src={Person}
+                                alt=""
+                                className="hidden md:hidden lg:flex"
+                            />
+                            <button className="text-[#144273] font-lato font-semibold leading-[40px] mt-1 hidden md:hidden lg:flex">
+                                Sign In
+                            </button>
 
-                                <div className="dropdown dropdown-hover dropdown-bottom dropdown-end">
-                                    <div
-                                        tabIndex={0}
-                                        role="button"
-                                        className="m-1 rounded-full w-12"
-                                    >
-                                        <img
-                                            className="w-full h-full rounded-full"
-                                            src={user.photoURL}
-                                            alt=""
-                                        />
-                                    </div>
-                                    <ul
-                                        tabIndex={0}
-                                        className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                                    >
-                                        <li>
-                                            <Link to={"/profile"}>
-                                                <button className="flex items-center gap-2">
-                                                    <CgProfile className="text-lg mt-1" />{" "}
-                                                    <span className="text-lg">
-                                                        Profile
-                                                    </span>
-                                                </button>
-                                            </Link>
-                                        </li>
-
-                                        <li>
-                                            <button
-                                                onClick={() => signOutUser()}
-                                            >
-                                                <VscSignOut className="text-lg mt-1" />{" "}
-                                                <span className="text-lg">
-                                                    Sign out
-                                                </span>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        ) : pathname === "/login" ? (
-                            <Link
-                                to={"/register"}
-                                className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
-                            >
-                                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
-                                    <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                        ></path>
-                                    </svg>
-                                </span>
-                                <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
-                                    Register
-                                </span>
-                                <span className="relative invisible">
-                                    Register
-                                </span>
-                            </Link>
-                        ) : (
-                            <Link
-                                to={"/login"}
-                                className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-blue-700 transition duration-300 ease-out border border-blue-700 rounded-lg shadow-md group"
-                            >
-                                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-blue-700 group-hover:translate-x-0 ease">
-                                    <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                        ></path>
-                                    </svg>
-                                </span>
-                                <span className="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease">
-                                    Login
-                                </span>
-                                <span className="relative invisible">
-                                    login
-                                </span>
-                            </Link>
-                        )}
+                            <button className="flex md:flex lg:hidden ">
+                                <BsPerson className="text-[#3270FC] text-2xl" />
+                            </button>
+                        </div>
                     </div>
-                </nav>
-            </div>
+
+                    {/* Add Listing */}
+                    <div className="pl-3 md:pl-3 lg:pl-6 hidden md:hidden lg:flex animate__animated animate__fadeInLeft">
+                        <button className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]">
+                            <div className="w-6 h-6 rounded-full bg-[#FFFFFF33] relative">
+                                <FaPlus className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white" />
+                            </div>
+
+                            <h1 className="text-white font-lato text-sm font-semibold">
+                                Add Listing
+                            </h1>
+                        </button>
+                    </div>
+
+                    {/* responsive search icon */}
+                    <div className="animate__animated animate__fadeInLeft px-3 flex md:hidden lg:hidden">
+                        <FaSearch
+                            className={`text-[#3270FC] text-lg h-5 animate__animated ${
+                                resSearch
+                                    ? "animate__fadeOutDown absolute"
+                                    : "flex animate__fadeInUp"
+                            }`}
+                            onClick={() => setResSearch(!resSearch)}
+                        />
+
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className={`text-[#144273] font-lato text-sm leading-8 md:leading-9 lg:leading-10 font-medium outline-none bg-transparent border-nonef placeholder:text-[#144273] placeholder:font-medium placeholder:leading-10 w-[100%] h-5 ${
+                                    resSearch ? "flex" : "hidden"
+                                } animate__animated animate__fadeInDown`}
+                                onBlur={() => setResSearch(false)}
+                                autoFocus={() => resSearch && true}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Menu bar */}
+                    <div className="px-3 flex md:flex lg:hidden animate__animated animate__fadeInLeft">
+                        <button className="bg-[#3270FC] text-white py-1 px-1 rounded-md">
+                            {responsive ? (
+                                <RxCross2
+                                    onClick={() => setResponsive(!responsive)}
+                                />
+                            ) : (
+                                <IoIosMenu
+                                    onClick={() => setResponsive(!responsive)}
+                                />
+                            )}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Responsive tablet */}
+                <div
+                    className={`absolute right-0 top-10 ${
+                        responsive ? "z-[99999999]" : "z-0"
+                    } bg-white rounded-lg p-4 flex-col animate__animated ${
+                        responsive
+                            ? "flex animate__fadeInUp"
+                            : "animate__fadeOutDown lg:hidden"
+                    }`}
+                >
+                    <div className="flex flex-col items-start justify-start p-5 pb-0">
+                        {resLinks}
+                    </div>
+
+                    <div className="divider my-0 "></div>
+
+                    {/* Add Listing */}
+                    <button className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]">
+                        <div className="w-5 md:w-6 h-5 md:h-6 rounded-full bg-[#FFFFFF33] relative">
+                            <FaPlus className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-xs md:text-sm" />
+                        </div>
+
+                        <h1 className="text-white font-lato text-xs md:text-sm font-semibold">
+                            Add Listing
+                        </h1>
+                    </button>
+                </div>
+            </nav>
         </>
     );
 }
