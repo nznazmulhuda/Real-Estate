@@ -9,23 +9,9 @@ function Banner({ data }) {
         image_urls,
         estate_title,
         segment_name,
-        description,
         price,
         status,
-        area,
         location,
-        facilities,
-        bedrooms,
-        bathrooms,
-        floor_number,
-        year_built,
-        hoa_fees,
-        school_district,
-        listing_agent,
-        contact_email,
-        contact_phone,
-        amenities,
-        pet_policy,
         rating,
     } = data;
 
@@ -47,16 +33,16 @@ function Banner({ data }) {
     return (
         <>
             <div>
-                <div className="w-full h-[25vh] relative">
+                <div className="w-full h-[40vh] relative">
                     <img
                         className="w-full h-full opacity-80"
                         src={image_urls[1]}
                         alt=""
                     />
 
-                    <div className="w-full h-[25vh] bg-gradient-to-b from-zinc-400 to-black absolute top-0 opacity-55"></div>
+                    <div className="w-full h-[40vh] bg-gradient-to-b from-zinc-400 to-black absolute top-0 opacity-55"></div>
 
-                    <div className="container top-0 absolute left-1/2 -translate-x-1/2 h-[25vh]">
+                    <div className="container top-0 absolute left-1/2 -translate-x-1/2 h-[40vh]">
                         <div className="flex flex-col justify-center h-full mt-10 space-y-5">
                             <div className="space-x-3">
                                 <button className="btn btn-ghost text-white font-bold text-xl bg-[#3270FC] hover:bg-[#326ffcc3] font-lato">
