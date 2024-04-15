@@ -8,6 +8,10 @@
         "status": "sale",
         "area": "2,500 sq ft",
         "location": "Suburban Heights, Anytown, USA",
+        "coordinates": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        },
         "facilities": ["living room", "kitchen", "backyard garden", "garage"],
         "image_urls": [
             "https://i.ibb.co/51BBsgh/SF1.webp",
@@ -32,6 +36,10 @@
         "status": "rent",
         "area": "1,800 sq ft",
         "location": "Downtown Skyline, Metropolitan City, USA",
+        "coordinates": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "facilities": [
             "spacious balcony",
             "fitness center",
@@ -61,6 +69,10 @@
         "status": "sale",
         "area": "1,200 sq ft",
         "location": "Serenity Cove, Coastal Town, USA",
+        "coordinates": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "facilities": [
             "waterfront view",
             "swimming pool",
@@ -89,6 +101,10 @@
         "status": "sale",
         "area": "1,600 sq ft",
         "location": "Metro District, Trendy City, USA",
+        "coordinates": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "facilities": [
             "rooftop deck",
             "attached garage",
@@ -118,6 +134,10 @@
         "status": "rent",
         "area": "3,500 sq ft",
         "location": "Tropical Paradise, Island Retreat, USA",
+        "coordinates": {
+            "latitude": 21.3069,
+            "longitude": -157.8583
+        },
         "facilities": [
             "private pool",
             "outdoor kitchen",
@@ -149,6 +169,10 @@
         "status": "rent",
         "area": "1,000 sq ft",
         "location": "Arts District, Metropolitan City, USA",
+        "coordinates": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "facilities": [
             "exposed brick walls",
             "modern kitchen",
@@ -177,6 +201,10 @@
         "status": "rent",
         "area": "900 sq ft",
         "location": "Seaside Village, Coastal Town, USA",
+        "coordinates": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        },
         "facilities": [
             "oceanfront deck",
             "fireplace",
@@ -203,6 +231,10 @@
         "status": "sale",
         "area": "2,800 sq ft",
         "location": "Mountain Ridge, Alpine Town, USA",
+        "coordinates": {
+            "latitude": 40.7608,
+            "longitude": -111.891
+        },
         "facilities": [
             "mountain views",
             "wrap-around deck",
@@ -232,6 +264,10 @@
         "status": "rent",
         "area": "1,200 sq ft",
         "location": "Lakefront Hideaway, Rustic Town, USA",
+        "coordinates": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
         "facilities": [
             "lakefront view",
             "private dock",

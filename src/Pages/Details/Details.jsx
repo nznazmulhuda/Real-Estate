@@ -1,4 +1,13 @@
 import useTitle from "react-dynamic-title";
+import {
+    MapContainer,
+    Marker,
+    Popup,
+    TileLayer,
+    Tooltip,
+    useMap,
+} from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import { useLoaderData, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative } from "swiper/modules";
@@ -17,6 +26,7 @@ import { TiGroupOutline } from "react-icons/ti";
 import { TbBed } from "react-icons/tb";
 import { PiBathtubLight } from "react-icons/pi";
 import Button from "./Button";
+import { useState } from "react";
 AOS.init();
 
 function Details() {
@@ -29,6 +39,7 @@ function Details() {
         "Welcome to your dream home! Nestled in a serene suburban neighborhood, this exquisite single-family residence offers an unparalleled living experience that combines luxury, comfort, and tranquility. Step through the grand double doors into a sprawling open-concept living space, flooded with natural light and adorned with elegant architectural details. The gourmet kitchen is a chef's paradise, featuring high-end appliances, custom cabinetry, and a spacious island perfect for culinary creations and entertaining guests. Retreat to the opulent master suite, boasting a lavish en-suite bathroom complete with a deep soaking tub, oversized shower, and dual vanities. Each additional bedroom is generously sized and appointed with luxurious finishes, providing ample space for family and guests. Outside, the meticulously landscaped grounds create a private oasis, offering lush greenery, a sparkling pool, and multiple seating areas for outdoor relaxation and enjoyment. Whether you're hosting gatherings in the expansive outdoor living space, unwinding in the cozy family room by the fireplace, or simply taking in the breathtaking views from the balcony, every moment spent in this magnificent home is sure to be unforgettable. With its prime location, impeccable craftsmanship, and unparalleled amenities, this is more than just a house – it's a place to call home.";
 
     const {
+        estate_title,
         segment_name,
         description,
         price,
@@ -48,7 +59,10 @@ function Details() {
         contact_phone,
         amenities,
         pet_policy,
+        coordinates,
     } = datas[0];
+
+    const position = [coordinates.latitude, coordinates.longitude];
     return (
         <>
             <div className="">
@@ -325,14 +339,29 @@ function Details() {
                             </div>
                         </div>
 
-                        <div id="location">
+                        <div id="location" className="mt-10 rounded-lg">
+                            <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                                Location
+                            </h1>
 
+                            <MapContainer
+                                center={position}
+                                zoom={13}
+                                scrollWheelZoom={false}
+                                className="h-[50vh]"
+                            >
+                                <TileLayer
+                                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                />
+                                <Marker position={position}>
+                                    <Tooltip>{estate_title}</Tooltip>
+                                </Marker>
+                            </MapContainer>
                         </div>
                     </div>
 
-                    <div className="col-span-4 border">
-                        
-                    </div>
+                    <div className="col-span-4 border"></div>
                 </div>
             </div>
         </>
