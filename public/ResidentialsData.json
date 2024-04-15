@@ -20,7 +20,8 @@
         "school_district": "Anytown School District",
         "listing_agent": "John Doe",
         "contact_email": "john@example.com",
-        "contact_phone": "+1 (555) 123-4567"
+        "contact_phone": "+1 (555) 123-4567",
+        "rating": 4.7
     },
     {
         "id": 2,
@@ -48,7 +49,8 @@
         "amenities": ["pool", "gym", "security"],
         "leasing_company": "Metropolitan Rentals",
         "contact_email": "leasing@example.com",
-        "contact_phone": "+1 (555) 987-6543"
+        "contact_phone": "+1 (555) 987-6543",
+        "rating": 3.9
     },
     {
         "id": 3,
@@ -75,7 +77,8 @@
         "hoa_fees": "$200/month",
         "amenities": ["pool", "tennis courts", "private dock"],
         "contact_email": "sales@example.com",
-        "contact_phone": "+1 (555) 555-5555"
+        "contact_phone": "+1 (555) 555-5555",
+        "rating": 4.5
     },
     {
         "id": 4,
@@ -103,7 +106,8 @@
         "year_built": 2010,
         "hoa_fees": "$150/month",
         "contact_email": "info@example.com",
-        "contact_phone": "+1 (555) 123-4567"
+        "contact_phone": "+1 (555) 123-4567",
+        "rating": 4.1
     },
     {
         "id": 5,
@@ -133,7 +137,8 @@
             "oceanfront"
         ],
         "contact_email": "vacation@example.com",
-        "contact_phone": "+1 (555) 123-4567"
+        "contact_phone": "+1 (555) 123-4567",
+        "rating": 4.8
     },
     {
         "id": 6,
@@ -160,7 +165,8 @@
         "pet_policy": "No pets allowed",
         "amenities": ["gym", "rooftop terrace"],
         "contact_email": "leasing@example.com",
-        "contact_phone": "+1 (555) 987-6543"
+        "contact_phone": "+1 (555) 987-6543",
+        "rating": 3.6
     },
     {
         "id": 7,
@@ -185,7 +191,8 @@
         "bathrooms": 1,
         "amenities": ["oceanfront deck", "fireplace", "beach access"],
         "contact_email": "vacation@example.com",
-        "contact_phone": "+1 (555) 123-4567"
+        "contact_phone": "+1 (555) 123-4567",
+        "rating": 4.2
     },
     {
         "id": 8,
@@ -213,7 +220,8 @@
         "school_district": "Alpine School District",
         "listing_agent": "Jane Smith",
         "contact_email": "jane@example.com",
-        "contact_phone": "+1 (555) 987-6543"
+        "contact_phone": "+1 (555) 987-6543",
+        "rating": 4.9
     },
     {
         "id": 9,
@@ -238,6 +246,7 @@
         "bathrooms": 2,
         "amenities": ["lakefront view", "private dock", "fire pit", "BBQ area"],
         "contact_email": "vacation@example.com",
-        "contact_phone": "+1 (555) 123-4567"
+        "contact_phone": "+1 (555) 123-4567",
+        "rating": 4.4
     }
 ]
