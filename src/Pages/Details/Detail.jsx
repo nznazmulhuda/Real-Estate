@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Button } from "rsuite";
 
 function Detail({ details }) {
     const {
@@ -24,82 +25,83 @@ function Detail({ details }) {
         <>
             <div
                 id="details"
-                className="mt-10 p-10 border rounded-lg bg-[#3571fc1b]"
+                className="mt-10 p-10 border rounded-lg bg-[#3571fc11]"
             >
                 <div>
                     <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
                         Details
                     </h1>
 
-                    <div className="grid grid-cols-3 gap-5">
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <Button appearance="ghost">
                             Property Id:{" "}
                             <span className="font-bold ml-1">{id}</span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Area: <span className="font-bold ml-1">{area}</span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Bathrooms:{" "}
                             <span className="font-bold ml-1">{bathrooms}</span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Bedroom:{" "}
                             <span className="font-bold ml-1">{bedrooms}</span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Type:{" "}
                             <span className="font-bold ml-1">
                                 {segment_name}
                             </span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Floor number:{" "}
                             <span className="font-bold ml-1">
-                                {floor_number}
+                                {floor_number ? floor_number : 20}
                             </span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Status:{" "}
                             <span className="font-bold ml-1">
                                 {status.charAt(0).toUpperCase() +
                                     status.slice(1)}
                             </span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Built Year:{" "}
                             <span className="font-bold ml-1">
                                 {year_built ? year_built : "2019"}
                             </span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Pet Policy:{" "}
                             <span className="font-bold ml-1">
-                                {pet_policy.split(" ").includes("allowed")
+                                {pet_policy &&
+                                pet_policy.split(" ").includes("allowed")
                                     ? "Allow"
                                     : "Not allow"}
                             </span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             Price:{" "}
                             <span className="font-bold ml-1">{price}</span>
-                        </h3>
+                        </Button>
 
-                        <h3 className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer">
+                        <Button appearance="ghost">
                             HOA fees:{" "}
                             <span className="font-bold ml-1">
                                 {hoa_fees ? hoa_fees : "$50/month"}
                             </span>
-                        </h3>
+                        </Button>
                     </div>
                 </div>
 
@@ -110,15 +112,12 @@ function Detail({ details }) {
                         Facilities
                     </h1>
 
-                    <ul className="grid grid-cols-3 gap-5">
+                    <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {facilities.map((facilitie) => (
-                            <li
-                                className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer"
-                                key={facilitie}
-                            >
+                            <Button appearance="ghost" key={facilitie}>
                                 {facilitie.charAt(0).toUpperCase() +
                                     facilitie.slice(1)}
-                            </li>
+                            </Button>
                         ))}
                     </ul>
                 </div>
@@ -130,15 +129,18 @@ function Detail({ details }) {
                         Amenities
                     </h1>
 
-                    <ul className="grid grid-cols-3 gap-5">
-                        {amenities.map((amen) => (
-                            <li
-                                className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer"
-                                key={amen}
-                            >
-                                {amen.charAt(0).toUpperCase() + amen.slice(1)}
-                            </li>
-                        ))}
+                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+                        {amenities &&
+                            amenities.map((amen) => (
+                                <Button
+                                    appearance="ghost"
+                                    className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer"
+                                    key={amen}
+                                >
+                                    {amen.charAt(0).toUpperCase() +
+                                        amen.slice(1)}
+                                </Button>
+                            ))}
                     </ul>
                 </div>
 

@@ -9,7 +9,7 @@ function Gallery({ details }) {
     return (
         <>
             <div id="gallery">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                     {image_urls.map((url) => (
                         <div
                             className="h-[30vh] rounded-xl shadow-lg border-2 border-zinc-500 p-2"
@@ -26,7 +26,7 @@ function Gallery({ details }) {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-4 mt-5 border divide-x">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-5 border divide-x">
                     <div className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100">
                         <IoHomeOutline className="text-[50px] text-[#3570FC]" />
 

@@ -211,7 +211,7 @@ function Register() {
                         </div>
 
                         <Link to={"/login"}>
-                            <h1 className="text-blue-500 underline font-semibold mt-3">
+                            <h1 className="text-blue-500 hover:underline font-semibold mt-3 text-lg no-underline">
                                 Already have an account
                             </h1>
                         </Link>

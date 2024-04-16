@@ -52,12 +52,12 @@ function ContactForm({ details }) {
                         </InputGroup>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid lg:grid-cols-2 gap-10">
                         <div className="space-y-2 mb-5">
                             <p className="text-[#1b3980] font-lato font-bold text-sm">
                                 Date
                             </p>
-                            <DatePicker />
+                            <DatePicker className="w-full" />
                         </div>
 
                         <div className="space-y-2 mb-5">
@@ -68,6 +68,7 @@ function ContactForm({ details }) {
                                 creatable
                                 placeholder={"Time"}
                                 data={data}
+                                className="w-full"
                             />
                         </div>
                     </div>

@@ -5,12 +5,15 @@ import { AuthContext } from "../../Context/AuthProvider";
 import { VscSignOut } from "react-icons/vsc";
 import { CgProfile } from "react-icons/cg";
 import { FaSearch } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
 import { BsPerson } from "react-icons/bs";
 import Person from "../../assets/Icon.png";
 import { IoIosMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { CiSettings } from "react-icons/ci";
 import "animate.css";
+import { AiOutlinePoweroff } from "react-icons/ai";
+import { Button } from "rsuite";
 
 function Navbar() {
     let { pathname } = useLocation();
@@ -30,45 +33,6 @@ function Navbar() {
                     }
                 >
                     Home
-                </NavLink>
-            </button>
-
-            <button className="animate__animated animate__fadeInLeft">
-                <NavLink
-                    to={"/blog"}
-                    className={({ isActive }) =>
-                        isActive
-                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
-                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
-                    }
-                >
-                    Blog
-                </NavLink>
-            </button>
-
-            <button className="animate__animated animate__fadeInLeft">
-                <NavLink
-                    to={"/about"}
-                    className={({ isActive }) =>
-                        isActive
-                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
-                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
-                    }
-                >
-                    About
-                </NavLink>
-            </button>
-
-            <button className="animate__animated animate__fadeInLeft">
-                <NavLink
-                    to={"/contact"}
-                    className={({ isActive }) =>
-                        isActive
-                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
-                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
-                    }
-                >
-                    Contact
                 </NavLink>
             </button>
 
@@ -107,54 +71,6 @@ function Navbar() {
                 </NavLink>
             </button>
 
-            <button
-                className="animate__animated animate__fadeInLeft"
-                onClick={() => setResponsive(false)}
-            >
-                <NavLink
-                    to={"/blog"}
-                    className={({ isActive }) =>
-                        isActive
-                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
-                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
-                    }
-                >
-                    Blog
-                </NavLink>
-            </button>
-
-            <button
-                className="animate__animated animate__fadeInLeft"
-                onClick={() => setResponsive(false)}
-            >
-                <NavLink
-                    to={"/about"}
-                    className={({ isActive }) =>
-                        isActive
-                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
-                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
-                    }
-                >
-                    About
-                </NavLink>
-            </button>
-
-            <button
-                className="animate__animated animate__fadeInLeft"
-                onClick={() => setResponsive(false)}
-            >
-                <NavLink
-                    to={"/contact"}
-                    className={({ isActive }) =>
-                        isActive
-                            ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
-                            : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
-                    }
-                >
-                    Contact
-                </NavLink>
-            </button>
-
             {user ? (
                 <button
                     className="animate__animated animate__fadeInLeft"
@@ -171,6 +87,16 @@ function Navbar() {
                         Update Profile
                     </NavLink>
                 </button>
+            ) : null}
+            <div className="divider my-0"></div>
+            {!user ? (
+                <Button
+                    appearance="primary"
+                    className="w-full btn btn-ghost text-lg font-bold font-josefin"
+                    onClick={signOutUser}
+                >
+                    <AiOutlinePoweroff /> Sign In
+                </Button>
             ) : null}
         </>
     );
@@ -248,52 +174,71 @@ function Navbar() {
                                         alt=""
                                     />
 
-                                    <ul
+                                    <div
                                         tabIndex={0}
-                                        className="dropdown-content z-[99999] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-3 hidden lg:flex"
+                                        className="dropdown-content z-[99999] menu p-2 shadow bg-base-100 rounded-box w-52 hidden lg:flex"
                                     >
                                         <li>
-                                            <button className="btn btn-primary text-lg font-bold font-josefin">
-                                                {user.displayName}
-                                            </button>
+                                            <p className="text-[#1b3571] text-sm font-semibold text-center">
+                                                Welcome,{" "}
+                                                <span className="text-[#3570FC] font-bold">
+                                                    {user.displayName}
+                                                </span>
+                                            </p>
                                         </li>
+
+                                        <div className="divider my-0"></div>
 
                                         <li>
                                             <Link
                                                 to={"/profile"}
-                                                className="w-full btn btn-primary text-lg font-bold font-josefin"
+                                                className="text-[#1b3571] text-sm font-semibold w-full hover:no-underline"
                                             >
-                                                Profile <CgProfile />
+                                                <BsPerson />
+                                                Profile
+                                            </Link>
+                                        </li>
+
+                                        <div className="divider my-0"></div>
+
+                                        <li className="flex items-center gap-1">
+                                            <Link
+                                                to={"/profile-edit"}
+                                                className="text-[#1b3571] text-sm font-semibold w-full hover:no-underline"
+                                            >
+                                                <CiSettings /> Settings
                                             </Link>
                                         </li>
 
                                         <div className="divider my-0"></div>
 
                                         <li>
-                                            <button
+                                            <Button
+                                                appearance="primary"
                                                 className="w-full btn btn-ghost text-lg font-bold font-josefin"
                                                 onClick={signOutUser}
                                             >
-                                                Sign Out <VscSignOut />
-                                            </button>
+                                                <AiOutlinePoweroff /> Sign out
+                                            </Button>
                                         </li>
-                                    </ul>
+                                    </div>
                                 </div>
                             )}
                         </div>
 
-                        {/* Add Listing */}
+                        {/* Dashboard */}
                         {user ? (
                             <div className="pl-3 md:pl-3 lg:pl-6 hidden md:hidden lg:flex animate__animated animate__fadeInLeft">
-                                <button className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]">
-                                    <div className="w-6 h-6 rounded-full bg-[#FFFFFF33] relative">
-                                        <FaPlus className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white" />
-                                    </div>
-
+                                <Link
+                                    to={"/dashboard"}
+                                    className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]"
+                                >
+                                    {" "}
+                                    <FaArrowTrendUp className="text-white" />
                                     <h1 className="text-white font-lato text-sm font-semibold">
-                                        Add Listing
+                                        Dashboard
                                     </h1>
-                                </button>
+                                </Link>
                             </div>
                         ) : null}
 

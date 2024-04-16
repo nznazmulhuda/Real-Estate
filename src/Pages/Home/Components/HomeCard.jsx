@@ -80,7 +80,7 @@ function HomeCard({ homeCard }) {
                             onMouseLeave={() => setHov(false)}
                         >
                             <h1
-                                className="font-bold text-white bg-[#3270FC] py-2 px-5 rounded-lg cursor-pointer"
+                                className="font-bold text-white bg-[#3270FC] py-2 px-5 rounded-lg cursor-pointer text-sm"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                                 onMouseEnter={() => setHov(true)}
@@ -90,7 +90,7 @@ function HomeCard({ homeCard }) {
                             </h1>
 
                             <h1
-                                className="font-bold text-white bg-[#3270FC] py-2 px-5 rounded-lg cursor-pointer"
+                                className="font-bold text-white bg-[#3270FC] py-2 px-5 rounded-lg cursor-pointer text-sm"
                                 data-aos="fade-up"
                                 data-aos-delay="200"
                                 onMouseEnter={() => setHov(true)}

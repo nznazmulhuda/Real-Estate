@@ -42,7 +42,7 @@ function Review() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
                         <div className="space-y-2 mb-5">
                             <p className="text-[#1b3980] font-lato font-bold text-sm">
                                 Your name<sup className="text-red-500">*</sup>

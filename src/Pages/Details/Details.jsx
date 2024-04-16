@@ -30,8 +30,8 @@ function Details() {
                 </div>
 
                 <div className="grid grid-cols-12 container mx-auto gap-10 mt-10 relative">
-                    <div className="col-span-1">
-                        <div className="items-center py-4 rounded-xl sticky top-28 flex flex-col justify-center p-1 shadow-lg">
+                    <div className="lg:col-span-1">
+                        <div className="items-center py-4 rounded-xl sticky top-28 lg:flex flex-col justify-center p-1 shadow-lg hidden">
                             <Button toolTip={"Main"} sec={"#main"}>
                                 <IoHomeOutline className="font-extrabold text-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                             </Button>
@@ -56,7 +56,7 @@ function Details() {
                         </div>
                     </div>
 
-                    <div className="col-span-7">
+                    <div className="col-span-12 lg:col-span-7">
                         <Gallery details={datas[0]} />
 
                         <Detail details={datas[0]} />
@@ -64,7 +64,7 @@ function Details() {
                         <Location details={datas[0]} />
                     </div>
 
-                    <div className="col-span-4">
+                    <div className="col-span-12 lg:col-span-4">
                         <Contact details={datas[0]} />
                         <Review />
                         <ContactForm details={datas[0]} />

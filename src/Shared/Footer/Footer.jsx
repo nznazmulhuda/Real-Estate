@@ -11,7 +11,7 @@ function Footer() {
     return (
         <>
             <div
-                className={`bg-[#151b24] rounded-lg pt-[100px] ${
+                className={`bg-[#151b24] pt-[100px] ${
                     pathname === "/" ? "pt-[100px]" : "pt-[30px] mt-10"
                 }`}
             >
@@ -49,7 +49,7 @@ function Footer() {
                     </div>
 
                     <div className="text-[#566985] font-semibold text-lg font-lato">
-                        <h1>Helpful links</h1>
+                        <h1 className="text-xl">Helpful links</h1>
 
                         <ul className="mt-5 flex flex-col pl-10 md:pl-0 lg:pl-0">
                             <li className="flex items-center gap-4">
@@ -105,7 +105,7 @@ function Footer() {
                     </div>
 
                     <div className="text-[#566985] font-semibold text-lg font-lato">
-                        <h1>Contacts Info</h1>
+                        <h1 className="text-xl">Contacts Info</h1>
 
                         <div className="flex items-center gap-2 mt-5 pl-10 md:pl-0 lg:pl-0">
                             <IoMailOutline className="text-[#3270FC] text-sm" />
@@ -145,7 +145,7 @@ function Footer() {
                     </div>
 
                     <div className="text-[#566985] font-semibold text-lg font-lato">
-                        <h1>Download our API</h1>
+                        <h1 className="text-xl">Download our API</h1>
 
                         <p className="text-[#878C9F] text-sm leading-6 mt-3 mb-4">
                             Start working with Dream Dwellings that can provide
@@ -154,12 +154,12 @@ function Footer() {
 
                         <button className="bg-[#3270FC] hover:bg-[#326ffcd7] text-white flex items-center justify-center gap-3 py-4 w-full rounded-lg mb-3">
                             <FaApple className="text-2xl" />
-                            <h1>App Store</h1>
+                            <h1 className="text-xl">App Store</h1>
                         </button>
 
                         <button className="bg-[#3270FC] hover:bg-[#326ffcd7] text-white flex items-center justify-center gap-3 py-4 w-full rounded-lg">
                             <FaGooglePlay className="text-2xl" />
-                            <h1> Play Store</h1>
+                            <h1 className="text-xl"> Play Store</h1>
                         </button>
                     </div>
                 </footer>

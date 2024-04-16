@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import {
-    About,
-    Blog,
-    Contact,
+    Dashboard,
     Details,
     Home,
     Login,
@@ -23,18 +21,6 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/blog",
-                element: <Blog />,
-            },
-            {
-                path: "/about",
-                element: <About />,
-            },
-            {
-                path: "/contact",
-                element: <Contact />,
-            },
-            {
                 path: "/login",
                 element: <Login />,
             },
@@ -50,6 +36,14 @@ export const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: () => fetch("/ResidentialsData.json"),
+            },
+            {
+                path: "/dashboard",
+                element: (
+                    <PrivateRoute>
+                        <Dashboard />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "/profile",
