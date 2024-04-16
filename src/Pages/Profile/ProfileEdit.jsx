@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./../../Context/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { updatePhoneNumber, updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -21,11 +21,15 @@ import EyeSlashIcon from "@rsuite/icons/legacy/EyeSlash";
 
 function ProfileEdit() {
     const { user, loading } = useContext(AuthContext);
-    const [name, setName] = useState(user.displayName);
+    const [firstName, setFirstName] = useState(user.displayName.split(" ")[0]);
+    const [lastName, setLastName] = useState(
+        user.displayName.split(" ").slice(1),
+    );
     const [url, setUrl] = useState(user.photoURL);
     const navigate = useNavigate();
-
-    const handleUpdateProfile = () => {
+    const name = firstName + " " + lastName;
+    const handleUpdateProfile = (e) => {
+        e.preventDefault();
         updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: url,
@@ -34,24 +38,24 @@ function ProfileEdit() {
                 loading ? (
                     <span className="loading loading-bars loading-lg absolute left-1/2 -translate-x-1/2"></span>
                 ) : (
-                    (navigate("/profile"),
+                    (navigate("/dashboard/profile"),
                     toast.success("Profile Updated Successfully!"))
                 ),
             )
             .catch((e) => console.error(e));
     };
-
     const [visible, setVisible] = useState(false);
     const handleChange = () => {
         setVisible(!visible);
     };
+
     return (
         <>
-            <Top title={"Profile"} />
+            <Top title={"Settings"} />
 
             <div className="grid grid-cols-6 gap-10">
                 <form
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={handleUpdateProfile}
                     className="col-span-6 lg:col-span-4"
                 >
                     {/* change avtar */}
@@ -127,6 +131,15 @@ function ProfileEdit() {
                                 </InputGroup.Addon>
                                 <Input
                                     placeholder={user.displayName.split(" ")[0]}
+                                    onChange={(e) =>
+                                        setFirstName(
+                                            e
+                                                ? e
+                                                : user.displayName.split(
+                                                      " ",
+                                                  )[0],
+                                        )
+                                    }
                                 />
                             </InputGroup>
                         </div>
@@ -143,6 +156,15 @@ function ProfileEdit() {
                                     placeholder={user.displayName
                                         .split(" ")
                                         .slice(1)}
+                                    onChange={(e) =>
+                                        setLastName(
+                                            e
+                                                ? e
+                                                : user.displayName
+                                                      .split(" ")
+                                                      .slice(1),
+                                        )
+                                    }
                                 />
                             </InputGroup>
                         </div>
@@ -155,7 +177,13 @@ function ProfileEdit() {
                                 <InputGroup.Addon>
                                     <IoLink className="text-[#3570FC]" />
                                 </InputGroup.Addon>
-                                <Input placeholder={user.photoURL} type="url" />
+                                <Input
+                                    placeholder={user.photoURL}
+                                    onChange={(e) =>
+                                        setUrl(e ? e : user.photoURL)
+                                    }
+                                    type="url"
+                                />
                             </InputGroup>
                         </div>
 
@@ -199,7 +227,11 @@ function ProfileEdit() {
                     </div>
 
                     <div className="w-full px-5">
-                        <Button appearance="ghost" className="w-full">
+                        <Button
+                            appearance="ghost"
+                            className="w-full"
+                            type="submit"
+                        >
                             Save Changes
                         </Button>
                     </div>

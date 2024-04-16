@@ -55,10 +55,7 @@ function Navbar() {
 
     const resLinks = (
         <>
-            <button
-                className="animate__animated animate__fadeInLeft"
-                onClick={() => setResponsive(false)}
-            >
+            <button className="animate__animated animate__fadeInLeft">
                 <NavLink
                     to={"/"}
                     className={({ isActive }) =>
@@ -72,10 +69,7 @@ function Navbar() {
             </button>
 
             {user ? (
-                <button
-                    className="animate__animated animate__fadeInLeft"
-                    onClick={() => setResponsive(false)}
-                >
+                <button className="animate__animated animate__fadeInLeft">
                     <NavLink
                         to={"/dashboard/settings"}
                         className={({ isActive }) =>
@@ -267,21 +261,14 @@ function Navbar() {
 
                         {/* Menu bar */}
                         <div className="px-3 flex md:flex lg:hidden animate__animated animate__fadeInLeft">
-                            <button
-                                className="bg-[#3270FC] text-white py-1 px-1 rounded-md"
-                                onBlur={() => setResponsive(false)}
-                            >
+                            <button className="bg-[#3270FC] text-white py-1 px-1 rounded-md">
                                 {responsive ? (
                                     <RxCross2
-                                        onClick={() =>
-                                            setResponsive(!responsive)
-                                        }
+                                        onClick={() => setResponsive(false)}
                                     />
                                 ) : (
                                     <IoIosMenu
-                                        onClick={() =>
-                                            setResponsive(!responsive)
-                                        }
+                                        onClick={() => setResponsive(true)}
                                     />
                                 )}
                             </button>
@@ -290,13 +277,10 @@ function Navbar() {
 
                     {/* Responsive tablet */}
                     <div
-                        className={`absolute right-0 top-14 ${
-                            responsive ? "z-[99999999]" : "z-0"
-                        } bg-white rounded-lg p-4 flex-col animate__animated ${
-                            responsive
-                                ? "flex animate__fadeInDown"
-                                : "animate__fadeOutUp -mt-9 lg:hidden"
-                        } w-80`}
+                        className={`absolute right-0 top-14  bg-white rounded-lg p-4 flex-col animate__animated w-80 ${
+                            responsive ? "flex" : "hidden"
+                        } `}
+                        onBlur={() => setResponsive(false)}
                     >
                         <div className="flex flex-col items-start justify-start p-5 pb-0">
                             {resLinks}
@@ -307,7 +291,6 @@ function Navbar() {
                         {user ? (
                             <>
                                 <Link
-                                    onClick={() => setResponsive(false)}
                                     to={"/dashboard/profile"}
                                     className="w-full btn btn-primary text-lg font-bold font-josefin"
                                 >
@@ -315,10 +298,7 @@ function Navbar() {
                                 </Link>
 
                                 <button
-                                    onClick={
-                                        (() => setResponsive(false),
-                                        signOutUser)
-                                    }
+                                    onClick={() => signOutUser}
                                     className="w-full btn btn-ghost text-lg font-bold font-josefin"
                                 >
                                     Sign Out <VscSignOut />
