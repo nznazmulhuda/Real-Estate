@@ -34,7 +34,7 @@ function Banner({ data }) {
     return (
         <>
             <div>
-                <div className="w-full h-[50vh] md:h-[45vh] lg:h-[40vh] relative">
+                <div className="md:w-full lg:w-full h-[50vh] md:h-[45vh] lg:h-[40vh] relative">
                     <img
                         className="w-full h-full opacity-80"
                         src={image_urls[1]}
@@ -99,9 +99,17 @@ function Banner({ data }) {
                             </div>
                         </div>
 
-                        <button className="btn absolute bottom-5 md:bottom-8 lg:bottom-10 left-5 md:left-0 lg:left-0 lg:right-10 btn-ghost text-white font-bold text-xl hover:bg-[#3270FC] border border-blue-500 flex items-center">
+                        <Button
+                            appearance="ghost"
+                            style={{
+                                position: "absolute",
+                                right: 0,
+                                bottom: 20,
+                                color: "white",
+                            }}
+                        >
                             <FaShareAlt /> Share
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>

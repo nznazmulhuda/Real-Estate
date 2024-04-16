@@ -4,6 +4,20 @@ import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Top from "./../Dashboard/Top";
+import { IoPersonCircleSharp } from "react-icons/io5";
+import { Button, Input, InputGroup } from "rsuite";
+import { FaCamera } from "react-icons/fa";
+import { FaKey } from "react-icons/fa6";
+import { IoPersonOutline, IoPerson } from "react-icons/io5";
+import { AiOutlinePhone } from "react-icons/ai";
+import { MdOutlineMail } from "react-icons/md";
+import { IoLink } from "react-icons/io5";
+import { BsUnlock } from "react-icons/bs";
+import { BsLock } from "react-icons/bs";
+import { GoShieldLock } from "react-icons/go";
+import EyeIcon from "@rsuite/icons/legacy/Eye";
+import EyeSlashIcon from "@rsuite/icons/legacy/EyeSlash";
 
 function ProfileEdit() {
     const { user, loading } = useContext(AuthContext);
@@ -26,71 +40,243 @@ function ProfileEdit() {
             )
             .catch((e) => console.error(e));
     };
+
+    const [visible, setVisible] = useState(false);
+    const handleChange = () => {
+        setVisible(!visible);
+    };
     return (
         <>
-            <div className="container mx-auto mt-10">
-                <div className="w-[10vw] mx-auto rounded-full">
-                    <img
-                        className="w-full h-full rounded-full bg-zinc-900 hover:brightness-75"
-                        src={user.photoURL}
-                        alt="Profile Pic"
-                    />
-                </div>
-                <form onSubmit={(e) => e.preventDefault()}>
-                    <div className="px-14 py-10">
-                        <div className="grid grid-cols-4">
-                            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold font-josefin col-span-1 grid">
-                                Name:
-                            </h1>
+            <Top title={"Profile"} />
 
-                            <input
-                                type="text"
-                                className="text-lg md:text-xl lg:text-2xl font-lato font-semibold col-span-3 outline-none border-none"
-                                onChange={(e) => setName(e.target.value)}
-                                defaultValue={user.displayName}
-                                autoFocus
+            <div className="grid grid-cols-6 gap-10">
+                <form
+                    onSubmit={(e) => e.preventDefault()}
+                    className="col-span-6 lg:col-span-4"
+                >
+                    {/* change avtar */}
+                    <div className="bg-white rounded-b-lg">
+                        <div className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3">
+                            <IoPersonCircleSharp className="text-2xl text-[#3570FC]" />{" "}
+                            <h5>Change Avatar</h5>
+                        </div>
+
+                        <div className="w-full h-[25vh] relative">
+                            <img
+                                className="w-full h-full rounded-b-lg"
+                                src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1713225600&semt=sph"
+                                alt=""
                             />
+
+                            <div className="absolute top-1/2 -translate-y-1/2 px-5 flex items-center gap-10">
+                                <div className="w-24 h-24 bg-[#b7b1b151] p-3 rounded-lg">
+                                    <img
+                                        className="rounded-lg w-full h-full"
+                                        src={user.photoURL}
+                                        alt=""
+                                    />
+                                </div>
+
+                                <input
+                                    type="file"
+                                    id="file"
+                                    className="absolute hidden -z-[9999]"
+                                    accept="image/*"
+                                />
+                                <label
+                                    htmlFor="file"
+                                    className="text-white cursor-pointer"
+                                >
+                                    Upload New Photo
+                                </label>
+                            </div>
+
+                            <div>
+                                <input
+                                    type="file"
+                                    id="coverPic"
+                                    accept="image/*"
+                                    className="absolute hidden -z-[99999]"
+                                />
+                                <label
+                                    htmlFor="coverPic"
+                                    className="btn text-white bg-[#3570FC] absolute bottom-0 right-0 border-none hover:bg-[#3571fce2] rounded-none rounded-br-lg"
+                                >
+                                    <FaCamera /> Change Cover
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Personal Info */}
+                    <div className="px-5 py-3 mt-5">
+                        <div className="flex items-center gap-3 text-[#152b5f] mb-3">
+                            <FaKey className="text-2xl text-[#3570FC]" />{" "}
+                            <h5>Personal Info</h5>
                         </div>
 
-                        <div className="divider my-0"></div>
+                        <hr />
 
-                        <div className="grid grid-cols-4">
-                            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold font-josefin col-span-1 ">
-                                Email:
-                            </h1>
-
-                            <h3 className="text-lg md:text-xl lg:text-2xl font-lato font-semibold col-span-3">
-                                {user.email}{" "}
-                                <span className="text-xs md:text-sm lg:text-lg text-blue-500 ml-3">
-                                    {user.emailVerified
-                                        ? "Verified"
-                                        : "Not verified"}
-                                </span>
-                            </h3>
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                First Name
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <IoPersonOutline className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input
+                                    placeholder={user.displayName.split(" ")[0]}
+                                />
+                            </InputGroup>
                         </div>
 
-                        <div className="divider my-0"></div>
-
-                        <div className="grid grid-cols-4">
-                            <h1 className="text-xl md:text-2xl lg:text-3xl font-bold font-josefin col-span-1 ">
-                                Photo URL:
-                            </h1>
-
-                            <input
-                                type="url"
-                                className="text-lg md:text-xl lg:text-2xl font-lato font-semibold col-span-3 outline-none border-none"
-                                defaultValue={user.photoURL}
-                                onChange={(e) => setUrl(e.target.value)}
-                            />
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                Last Name
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <IoPerson className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input
+                                    placeholder={user.displayName
+                                        .split(" ")
+                                        .slice(1)}
+                                />
+                            </InputGroup>
                         </div>
-                        <div className="text-center mt-10">
-                            <button
+
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                Photo Url
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <IoLink className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input placeholder={user.photoURL} type="url" />
+                            </InputGroup>
+                        </div>
+
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                Email Address
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <MdOutlineMail className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input
+                                    placeholder={
+                                        user.email
+                                            ? user.email
+                                            : "Your Mail Address"
+                                    }
+                                    disabled={user.email ? true : false}
+                                />
+                            </InputGroup>
+                        </div>
+
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                phone
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <AiOutlinePhone className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input
+                                    placeholder={
+                                        user.phoneNumber
+                                            ? user.phoneNumber
+                                            : "Your number"
+                                    }
+                                    type="number"
+                                />
+                            </InputGroup>
+                        </div>
+                    </div>
+
+                    <div className="w-full px-5">
+                        <Button appearance="ghost" className="w-full">
+                            Save Changes
+                        </Button>
+                    </div>
+                </form>
+
+                <form
+                    onSubmit={(e) => e.preventDefault()}
+                    className="col-span-6 lg:col-span-2"
+                >
+                    <div className="">
+                        <div className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3">
+                            <FaKey className="text-2xl text-[#3570FC]" />{" "}
+                            <h5>Change Password</h5>
+                        </div>
+
+                        <hr />
+
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                Current Password
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <BsUnlock className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input
+                                    type={visible ? "text" : "password"}
+                                    placeholder="********"
+                                />
+                                <InputGroup.Button onClick={handleChange}>
+                                    {visible ? <EyeIcon /> : <EyeSlashIcon />}
+                                </InputGroup.Button>
+                            </InputGroup>
+                        </div>
+
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                New Password
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <BsLock className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+                                <Input
+                                    type={visible ? "text" : "password"}
+                                    placeholder="********"
+                                />
+                                <InputGroup.Button onClick={handleChange}>
+                                    {visible ? <EyeIcon /> : <EyeSlashIcon />}
+                                </InputGroup.Button>
+                            </InputGroup>
+                        </div>
+
+                        <div className="mb-6">
+                            <h6 className="text-sm text-[#2147a2] mb-3">
+                                New Password
+                            </h6>
+                            <InputGroup>
+                                <InputGroup.Addon>
+                                    <GoShieldLock className="text-[#3570FC]" />
+                                </InputGroup.Addon>
+
+                                <Input
+                                    type={visible ? "text" : "password"}
+                                    placeholder="********"
+                                />
+                            </InputGroup>
+                        </div>
+
+                        <div className="w-full">
+                            <Button
+                                appearance="ghost"
+                                className="w-full"
                                 type="submit"
-                                onClick={handleUpdateProfile}
-                                className="btn text-lg md:text-xl lg:text-xl"
                             >
-                                Update Confirm
-                            </button>
+                                Change Password
+                            </Button>
                         </div>
                     </div>
                 </form>

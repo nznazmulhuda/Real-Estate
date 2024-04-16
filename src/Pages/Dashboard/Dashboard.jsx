@@ -9,7 +9,7 @@ function Dashboard() {
                     <SideBar />
                 </div>
 
-                <div className="col-span-12 lg:col-span-10 px-12 py-16">
+                <div className="col-span-12 lg:col-span-10 px-5 lg:px-12 py-16">
                     <Outlet />
                 </div>
             </div>

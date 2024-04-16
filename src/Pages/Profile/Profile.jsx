@@ -1,96 +1,175 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./../../Context/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteUser } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 import toast from "react-hot-toast";
+import Top from "./../Dashboard/Top";
+import { IoPersonCircleSharp } from "react-icons/io5";
+import { Button, Input, InputGroup } from "rsuite";
+import { FaCamera } from "react-icons/fa";
+import { FaKey } from "react-icons/fa6";
+import { IoPersonOutline, IoPerson } from "react-icons/io5";
+import { AiOutlinePhone } from "react-icons/ai";
+import { MdOutlineMail } from "react-icons/md";
+import { IoLink } from "react-icons/io5";
+import { BsUnlock } from "react-icons/bs";
+import { BsLock } from "react-icons/bs";
+import { GoShieldLock } from "react-icons/go";
+import { MdVerified } from "react-icons/md";
+import EyeIcon from "@rsuite/icons/legacy/Eye";
+import EyeSlashIcon from "@rsuite/icons/legacy/EyeSlash";
+import { GoUnverified } from "react-icons/go";
 
 function Profile() {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
-    const handleDeleteAccount = () => {
-        deleteUser(auth.currentUser)
-            .then(() => toast.success("Account delete success!"), navigate("/"))
-            .catch((e) => toast.error(e.message));
+    const [visible, setVisible] = useState(false);
+    const handleChange = () => {
+        setVisible(!visible);
     };
-
     return (
         <>
-            <div className="container mx-auto mt-10 w-full">
-                <div className="w-[30vw] md:w-[20vw] lg:w-[10vw] mx-auto rounded-full">
-                    <img
-                        className="w-full h-full rounded-full bg-zinc-900 hover:brightness-75"
-                        src={user.photoURL}
-                        alt="Profile Pic"
-                    />
-                </div>
+            <Top title={"Profile"} />
 
-                <div className="px-14 py-10 w-full">
-                    <div className="grid grid-cols-2 lg:grid-cols-4">
-                        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold font-josefin lg:col-span-1 grid">
-                            Name:
-                        </h1>
-
-                        <h3 className="text-lg md:text-xl lg:text-2xl font-lato font-semibold lg:col-span-3">
-                            {user.displayName}
-                        </h3>
+            <form onSubmit={(e) => e.preventDefault()}>
+                {/* change avtar */}
+                <div className="bg-white rounded-b-lg">
+                    <div className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3">
+                        <IoPersonCircleSharp className="text-2xl text-[#3570FC]" />{" "}
+                        <h5>Avatar</h5>
                     </div>
 
-                    <div className="divider my-0"></div>
-
-                    <div className="grid grid-cols-2 lg:grid-cols-4 w-full">
-                        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold font-josefin lg:col-span-1 ">
-                            Email:
-                        </h1>
-                        <div className="flex items-center w-full lg:col-span-3 pr-5">
-                            <input
-                                type="url"
-                                className="text-lg md:text-xl lg:text-2xl font-lato font-semibold w-full outline-none"
-                                defaultValue={user.email}
-                                readOnly
-                            />{" "}
-                            <span className="text-xs md:text-sm lg:text-lg text-blue-500 ml-3 hidden md:flex lg:flex">
-                                {user.emailVerified
-                                    ? "Verified"
-                                    : "Not verified"}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="divider my-0"></div>
-
-                    <div className="grid grid-cols-2 lg:grid-cols-4">
-                        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold font-josefin lg:col-span-1 ">
-                            Photo URL:
-                        </h1>
-
-                        <input
-                            type="url"
-                            className="text-lg md:text-xl lg:text-2xl font-lato font-semibold lg:col-span-3 w-full outline-none overflow-y-visible "
-                            defaultValue={user.photoURL}
-                            readOnly
+                    <div className="w-full h-[25vh] relative">
+                        <img
+                            className="w-full h-full rounded-b-lg"
+                            src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1713225600&semt=sph"
+                            alt=""
                         />
-                    </div>
 
-                    <div className="flex items-center justify-center gap-5">
-                        <div className="text-center mt-10">
-                            <Link to={"/profile-edit"}>
-                                <button className="btn text-sm md:text-lg lg:text-xl">
-                                    Update Profile
-                                </button>
-                            </Link>
-                        </div>
-
-                        <div className="text-center mt-10">
-                            <button
-                                onClick={handleDeleteAccount}
-                                className="btn btn-primary text-sm md:text-lg lg:text-xl"
-                            >
-                                Delete Account
-                            </button>
+                        <div className="absolute top-1/2 -translate-y-1/2 px-5 flex items-center gap-10">
+                            <div className="w-24 h-24 bg-[#b7b1b151] p-3 rounded-lg">
+                                <img
+                                    className="rounded-lg w-full h-full"
+                                    src={user.photoURL}
+                                    alt=""
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                {/* Personal Info */}
+                <div className="px-5 py-3 mt-5">
+                    <div className="flex items-center gap-3 text-[#152b5f] mb-3">
+                        <FaKey className="text-2xl text-[#3570FC]" />{" "}
+                        <h5>Personal Info</h5>
+                    </div>
+
+                    <hr />
+
+                    <div className="mb-6">
+                        <h6 className="text-sm text-[#2147a2] mb-3">
+                            First Name
+                        </h6>
+                        <InputGroup>
+                            <InputGroup.Addon>
+                                <IoPersonOutline className="text-[#3570FC]" />
+                            </InputGroup.Addon>
+                            <Input
+                                placeholder={user.displayName.split(" ")[0]}
+                                disabled
+                            />
+                        </InputGroup>
+                    </div>
+
+                    <div className="mb-6">
+                        <h6 className="text-sm text-[#2147a2] mb-3">
+                            Last Name
+                        </h6>
+                        <InputGroup>
+                            <InputGroup.Addon>
+                                <IoPerson className="text-[#3570FC]" />
+                            </InputGroup.Addon>
+                            <Input
+                                placeholder={user.displayName
+                                    .split(" ")
+                                    .slice(1)}
+                                disabled
+                            />
+                        </InputGroup>
+                    </div>
+
+                    <div className="mb-6">
+                        <h6 className="text-sm text-[#2147a2] mb-3">
+                            Photo Url
+                        </h6>
+                        <InputGroup>
+                            <InputGroup.Addon>
+                                <IoLink className="text-[#3570FC]" />
+                            </InputGroup.Addon>
+                            <Input
+                                placeholder={user.photoURL}
+                                type="url"
+                                disabled
+                            />
+                        </InputGroup>
+                    </div>
+
+                    <div className="mb-6">
+                        <h6 className="text-sm text-[#2147a2] mb-3">
+                            Email Address
+                        </h6>
+                        <InputGroup>
+                            <InputGroup.Addon>
+                                <MdOutlineMail className="text-[#3570FC]" />
+                            </InputGroup.Addon>
+                            <Input
+                                placeholder={
+                                    user.email
+                                        ? user.email
+                                        : "No Mail Address Added"
+                                }
+                                disabled
+                            />
+                            <InputGroup.Button>
+                                {user.emailVerified ? (
+                                    <MdVerified className="text-green-500" />
+                                ) : (
+                                    <GoUnverified className="text-red-500" />
+                                )}
+                            </InputGroup.Button>
+                        </InputGroup>
+                    </div>
+
+                    <div className="mb-6">
+                        <h6 className="text-sm text-[#2147a2] mb-3">phone</h6>
+                        <InputGroup>
+                            <InputGroup.Addon>
+                                <AiOutlinePhone className="text-[#3570FC]" />
+                            </InputGroup.Addon>
+                            <Input
+                                placeholder={
+                                    user.phoneNumber
+                                        ? user.phoneNumber
+                                        : "Your number"
+                                }
+                                type="number"
+                                disabled
+                            />
+                        </InputGroup>
+                    </div>
+                </div>
+            </form>
+            <hr />
+            <div className="px-5 ">
+                <Button
+                    className="w-full"
+                    appearance="ghost"
+                    onClick={() => navigate("/dashboard/settings")}
+                >
+                    Update Profile
+                </Button>
             </div>
         </>
     );

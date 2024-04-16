@@ -15,7 +15,7 @@ function Review() {
     const [hoverValue, setHoverValue] = useState(3);
     return (
         <>
-            <div className="border rounded-xl p-7 mt-10 shadow-lg">
+            <div className="border rounded-xl p-7 mt-10 shadow-lg ">
                 <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
                     Add Your Review
                 </h1>

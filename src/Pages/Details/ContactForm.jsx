@@ -22,7 +22,7 @@ function ContactForm({ details }) {
 
     return (
         <>
-            <div className="border mt-10 sticky top-28 rounded-xl">
+            <div className="border mt-10 sticky top-28 rounded-xl ">
                 <h1 className="text-3xl font-bold font-lato text-white bg-[#3570FC] p-5 rounded-t-lg">
                     Contact Property
                 </h1>

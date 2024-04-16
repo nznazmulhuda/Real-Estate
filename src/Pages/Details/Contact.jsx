@@ -33,7 +33,7 @@ export function Download({ text, className }) {
 function Contact() {
     return (
         <>
-            <div className="border p-7 rounded-xl shadow-lg">
+            <div className="border p-7 rounded-xl shadow-lg ">
                 <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
                     Property Documents
                 </h1>

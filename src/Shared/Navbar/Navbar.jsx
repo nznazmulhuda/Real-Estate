@@ -39,7 +39,7 @@ function Navbar() {
             {user ? (
                 <button className="animate__animated animate__fadeInLeft">
                     <NavLink
-                        to={"/profile-edit"}
+                        to={"/dashboard/settings"}
                         className={({ isActive }) =>
                             isActive
                                 ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
@@ -77,7 +77,7 @@ function Navbar() {
                     onClick={() => setResponsive(false)}
                 >
                     <NavLink
-                        to={"/profile-edit"}
+                        to={"/dashboard/settings"}
                         className={({ isActive }) =>
                             isActive
                                 ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
@@ -191,7 +191,7 @@ function Navbar() {
 
                                         <li>
                                             <Link
-                                                to={"/profile"}
+                                                to={"/dashboard/profile"}
                                                 className="text-[#1b3571] text-sm font-semibold w-full hover:no-underline"
                                             >
                                                 <BsPerson />
@@ -203,7 +203,7 @@ function Navbar() {
 
                                         <li className="flex items-center gap-1">
                                             <Link
-                                                to={"/profile-edit"}
+                                                to={"/dashboard/settings"}
                                                 className="text-[#1b3571] text-sm font-semibold w-full hover:no-underline"
                                             >
                                                 <CiSettings /> Settings
@@ -294,8 +294,8 @@ function Navbar() {
                             responsive ? "z-[99999999]" : "z-0"
                         } bg-white rounded-lg p-4 flex-col animate__animated ${
                             responsive
-                                ? "flex animate__fadeInUp"
-                                : "animate__fadeOutDown lg:hidden"
+                                ? "flex animate__fadeInDown"
+                                : "animate__fadeOutUp -mt-9 lg:hidden"
                         } w-80`}
                     >
                         <div className="flex flex-col items-start justify-start p-5 pb-0">
@@ -308,7 +308,7 @@ function Navbar() {
                             <>
                                 <Link
                                     onClick={() => setResponsive(false)}
-                                    to={"/profile"}
+                                    to={"/dashboard/profile"}
                                     className="w-full btn btn-primary text-lg font-bold font-josefin"
                                 >
                                     Profile <CgProfile />

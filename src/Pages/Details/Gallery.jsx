@@ -12,7 +12,7 @@ function Gallery({ details }) {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                     {image_urls.map((url) => (
                         <div
-                            className="h-[30vh] rounded-xl shadow-lg border-2 border-zinc-500 p-2"
+                            className="h-[30vh] rounded-xl shadow-lg lg:border-2 lg:border-zinc-500 lg:p-2"
                             key={url}
                         >
                             <div className="w-full h-full bg-black rounded-xl">
