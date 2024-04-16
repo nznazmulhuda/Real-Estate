@@ -50,6 +50,21 @@ function Navbar() {
                     </NavLink>
                 </button>
             ) : null}
+
+            {user ? (
+                <button className="animate__animated animate__fadeInLeft">
+                    <NavLink
+                        to={"/dashboard/profile"}
+                        className={({ isActive }) =>
+                            isActive
+                                ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                                : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                        }
+                    >
+                        User Profile
+                    </NavLink>
+                </button>
+            ) : null}
         </>
     );
 
@@ -79,6 +94,21 @@ function Navbar() {
                         }
                     >
                         Update Profile
+                    </NavLink>
+                </button>
+            ) : null}
+
+            {user ? (
+                <button className="animate__animated animate__fadeInLeft">
+                    <NavLink
+                        to={"/dashboard/profile"}
+                        className={({ isActive }) =>
+                            isActive
+                                ? `text-[#3270FC] font-lato font-medium leading-6 text-sm`
+                                : `text-[#144273] font-lato text-sm font-medium leading-6 hover:text-[#3270FC]`
+                        }
+                    >
+                        User Profile
                     </NavLink>
                 </button>
             ) : null}

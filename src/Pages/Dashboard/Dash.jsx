@@ -4,8 +4,10 @@ import { FaRegChartBar } from "react-icons/fa";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
 import Statistics from "./Statistics";
+import useTitle from "react-dynamic-title";
 
 function Dash() {
+    useTitle("Dashboard");
     return (
         <>
             <Top title={"Dashboard"} />

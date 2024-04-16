@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Input, InputGroup, Rate } from "rsuite";
 import { IoMdPerson } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
+import { AuthContext } from "./../../Context/AuthProvider";
 
 const texts = {
     1: "Useless",
@@ -13,6 +14,7 @@ const texts = {
 
 function Review() {
     const [hoverValue, setHoverValue] = useState(3);
+    const { user } = useContext(AuthContext);
     return (
         <>
             <div className="border rounded-xl p-7 mt-10 shadow-lg ">
@@ -51,7 +53,10 @@ function Review() {
                                 <InputGroup.Addon>
                                     <IoMdPerson className="text-[#3570FC]" />
                                 </InputGroup.Addon>
-                                <Input />
+                                <Input
+                                    placeholder={user.displayName}
+                                    defaultValue={user.displayName}
+                                />
                             </InputGroup>
                         </div>
 
@@ -63,7 +68,10 @@ function Review() {
                                 <InputGroup.Addon>
                                     <IoMail className="text-[#3570FC]" />
                                 </InputGroup.Addon>
-                                <Input />
+                                <Input
+                                    placeholder={user.email}
+                                    defaultValue={user.email}
+                                />
                             </InputGroup>
                         </div>
                     </div>

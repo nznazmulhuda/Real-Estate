@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import style from "./Style.module.css";
 import bg2 from "../../assets/bg2.jpg";
+import useTitle from "react-dynamic-title";
 function ErrorPage() {
+    useTitle("Page Not Found");
     return (
         <>
             <div className="w-full h-[100vh] relative bg-[#1d4196]">

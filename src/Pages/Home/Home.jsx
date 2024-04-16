@@ -98,7 +98,7 @@ function Home() {
                                 placeholder="Enter Your Email"
                                 className="text-[#666] placeholder:text-sm font-semibold font-lato outline-none border-none bg-transparent pl-3 w-full"
                             />
-                            <button className="bg-[#3270FC] rounded px-8 text-white py-2">
+                            <button className="bg-[#3270FC] rounded px-8 text-white py-2 cursor-pointer">
                                 Subscribe
                             </button>
                         </div>

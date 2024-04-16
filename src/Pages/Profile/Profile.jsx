@@ -1,33 +1,22 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "./../../Context/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
-import { deleteUser } from "firebase/auth";
-import { auth } from "../../Firebase/Firebase.config";
-import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import Top from "./../Dashboard/Top";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { Button, Input, InputGroup } from "rsuite";
-import { FaCamera } from "react-icons/fa";
 import { FaKey } from "react-icons/fa6";
 import { IoPersonOutline, IoPerson } from "react-icons/io5";
 import { AiOutlinePhone } from "react-icons/ai";
 import { MdOutlineMail } from "react-icons/md";
 import { IoLink } from "react-icons/io5";
-import { BsUnlock } from "react-icons/bs";
-import { BsLock } from "react-icons/bs";
-import { GoShieldLock } from "react-icons/go";
 import { MdVerified } from "react-icons/md";
-import EyeIcon from "@rsuite/icons/legacy/Eye";
-import EyeSlashIcon from "@rsuite/icons/legacy/EyeSlash";
 import { GoUnverified } from "react-icons/go";
+import useTitle from "react-dynamic-title";
 
 function Profile() {
+    useTitle("Profile");
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [visible, setVisible] = useState(false);
-    const handleChange = () => {
-        setVisible(!visible);
-    };
     return (
         <>
             <Top title={"Profile"} />
@@ -94,7 +83,8 @@ function Profile() {
                             <Input
                                 placeholder={user.displayName
                                     .split(" ")
-                                    .slice(1)}
+                                    .slice(1)
+                                    .join(" ")}
                                 disabled
                             />
                         </InputGroup>

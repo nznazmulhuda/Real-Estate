@@ -30,7 +30,7 @@ function Details() {
                 </div>
 
                 <div className="lg:grid lg:grid-cols-12 container mx-auto gap-10 mt-10 lg:relative">
-                    <div className=" hidden lg:flex lg:col-span-1">
+                    <div className=" hidden lg:flex items-start justify-start lg:col-span-1">
                         <div className="items-center py-4 rounded-xl sticky top-28 flex-col justify-center p-1 shadow-lg">
                             <Button toolTip={"Main"} sec={"#main"}>
                                 <IoHomeOutline className="font-extrabold text-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./../../Context/AuthProvider";
-import { updatePhoneNumber, updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/Firebase.config";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -18,8 +18,10 @@ import { BsLock } from "react-icons/bs";
 import { GoShieldLock } from "react-icons/go";
 import EyeIcon from "@rsuite/icons/legacy/Eye";
 import EyeSlashIcon from "@rsuite/icons/legacy/EyeSlash";
+import useTitle from "react-dynamic-title";
 
 function ProfileEdit() {
+    useTitle("Update Profile");
     const { user, loading } = useContext(AuthContext);
     const [firstName, setFirstName] = useState(user.displayName.split(" ")[0]);
     const [lastName, setLastName] = useState(
@@ -155,7 +157,8 @@ function ProfileEdit() {
                                 <Input
                                     placeholder={user.displayName
                                         .split(" ")
-                                        .slice(1)}
+                                        .slice(1)
+                                        .join(" ")}
                                     onChange={(e) =>
                                         setLastName(
                                             e

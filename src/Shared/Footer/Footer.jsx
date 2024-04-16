@@ -145,7 +145,7 @@ function Footer() {
                     </div>
 
                     <div className="text-[#566985] font-semibold text-lg font-lato">
-                        <h1 className="text-xl">Download our API</h1>
+                        <h1 className="text-xl">Download our APP</h1>
 
                         <p className="text-[#878C9F] text-sm leading-6 mt-3 mb-4">
                             Start working with Dream Dwellings that can provide

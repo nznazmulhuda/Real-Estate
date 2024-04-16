@@ -143,12 +143,12 @@ function Register() {
                         {passVisible ? (
                             <FaRegEye
                                 onClick={() => setPassVisible(!passVisible)}
-                                className="absolute right-3"
+                                className="absolute right-3 cursor-pointer"
                             />
                         ) : (
                             <FaRegEyeSlash
                                 onClick={() => setPassVisible(!passVisible)}
-                                className="absolute right-3"
+                                className="absolute right-3 cursor-pointer"
                             />
                         )}
                     </div>

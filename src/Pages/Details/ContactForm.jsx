@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
 import { IoMdPerson } from "react-icons/io";
 import { MdPhoneEnabled } from "react-icons/md";
 import { Button, DatePicker, Input, InputGroup, InputPicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import "rsuite/styles/index.less";
+import { AuthContext } from "./../../Context/AuthProvider";
 
 function ContactForm({ details }) {
     const data = [
@@ -19,6 +21,7 @@ function ContactForm({ details }) {
         label: item,
         value: item,
     }));
+    const { user } = useContext(AuthContext);
 
     return (
         <>
@@ -36,7 +39,7 @@ function ContactForm({ details }) {
                             <InputGroup.Addon>
                                 <IoMdPerson className="text-[#3570FC]" />
                             </InputGroup.Addon>
-                            <Input />
+                            <Input placeholder={user.displayName} />
                         </InputGroup>
                     </div>
 
@@ -48,7 +51,13 @@ function ContactForm({ details }) {
                             <InputGroup.Addon>
                                 <MdPhoneEnabled className="text-[#3570FC]" />
                             </InputGroup.Addon>
-                            <Input />
+                            <Input
+                                placeholder={
+                                    user.phoneNumber
+                                        ? user.phoneNumber
+                                        : "Number"
+                                }
+                            />
                         </InputGroup>
                     </div>
 
