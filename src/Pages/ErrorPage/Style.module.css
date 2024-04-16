@@ -1,0 +1,12 @@
+.message {
+    font-weight: 700 !important;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    background: url("./bg.jpg");
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 20vw;
+    line-height: 1;
+}
