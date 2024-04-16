@@ -10,6 +10,7 @@ import {
     Register,
 } from "../Pages";
 import PrivateRoute from "./PrivateRoute";
+import Dash from "../Pages/Dashboard/Dash";
 
 export const router = createBrowserRouter([
     {
@@ -44,22 +45,32 @@ export const router = createBrowserRouter([
                         <Dashboard />
                     </PrivateRoute>
                 ),
-            },
-            {
-                path: "/profile",
-                element: (
-                    <PrivateRoute>
-                        <Profile />
-                    </PrivateRoute>
-                ),
-            },
-            {
-                path: "/profile-edit",
-                element: (
-                    <PrivateRoute>
-                        <ProfileEdit />
-                    </PrivateRoute>
-                ),
+                children: [
+                    {
+                        path: "/dashboard",
+                        element: (
+                            <PrivateRoute>
+                                <Dash />
+                            </PrivateRoute>
+                        ),
+                    },
+                    {
+                        path: "profile",
+                        element: (
+                            <PrivateRoute>
+                                <Profile />
+                            </PrivateRoute>
+                        ),
+                    },
+                    {
+                        path: "settings",
+                        element: (
+                            <PrivateRoute>
+                                <ProfileEdit />
+                            </PrivateRoute>
+                        ),
+                    },
+                ],
             },
         ],
     },

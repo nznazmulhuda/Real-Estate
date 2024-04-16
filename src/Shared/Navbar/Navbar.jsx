@@ -111,7 +111,7 @@ function Navbar() {
                         <div className="animate__animated animate__fadeInLeft">
                             <Link
                                 to={"/"}
-                                className="lg:text-2xl font-lato font-bold cursor-pointer"
+                                className="lg:text-2xl font-lato font-bold cursor-pointer focus:no-underline hover:no-underline"
                             >
                                 <span className="text-blue-600 font-extrabold lg:text-4xl">
                                     D
@@ -231,7 +231,7 @@ function Navbar() {
                             <div className="pl-3 md:pl-3 lg:pl-6 hidden md:hidden lg:flex animate__animated animate__fadeInLeft">
                                 <Link
                                     to={"/dashboard"}
-                                    className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7]"
+                                    className="flex items-center gap-3 bg-[#3270FC] rounded px-5 py-3 hover:bg-[#326ffce7] focus:no-underline hover:no-underline"
                                 >
                                     {" "}
                                     <FaArrowTrendUp className="text-white" />
