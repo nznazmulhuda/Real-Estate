@@ -54,7 +54,7 @@ function Home() {
                     ))}
                 </div>
 
-                <div className="mt-20">
+                <div className="mt-20 overflow-hidden">
                     <h1
                         className="text-blue-700 font-bold text-xl md:text-2xl lg:text-4xl mb-6 text-center"
                         data-aos="fade-up"

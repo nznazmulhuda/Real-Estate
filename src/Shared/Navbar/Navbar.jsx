@@ -1,9 +1,8 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../../../node_modules/animate.css/";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import { VscSignOut } from "react-icons/vsc";
-import { CgProfile } from "react-icons/cg";
 import { FaSearch } from "react-icons/fa";
 import { BsPerson } from "react-icons/bs";
 import Person from "../../assets/Icon.png";
@@ -20,6 +19,7 @@ function Navbar() {
     const { user, signOutUser } = useContext(AuthContext);
     const [responsive, setResponsive] = useState(false);
     const [resSearch, setResSearch] = useState(false);
+    const navigate = useNavigate();
 
     const links = (
         <>
@@ -117,7 +117,7 @@ function Navbar() {
                 <Button
                     appearance="primary"
                     className="w-full btn btn-ghost text-lg font-bold font-josefin"
-                    onClick={signOutUser}
+                    onClick={() => navigate("/login")}
                 >
                     <AiOutlinePoweroff /> Sign In
                 </Button>
@@ -321,14 +321,14 @@ function Navbar() {
                         {user ? (
                             <>
                                 <Link
-                                    to={"/dashboard/profile"}
+                                    to={"/dashboard"}
                                     className="w-full btn btn-primary text-lg font-bold font-josefin"
                                 >
-                                    Profile <CgProfile />
+                                    Dashboard <FaArrowTrendUp />
                                 </Link>
 
                                 <button
-                                    onClick={() => signOutUser}
+                                    onClick={() => signOutUser()}
                                     className="w-full btn btn-ghost text-lg font-bold font-josefin"
                                 >
                                     Sign Out <VscSignOut />

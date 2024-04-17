@@ -13,7 +13,7 @@ function Dash() {
             <Top title={"Dashboard"} />
 
             <div className="grid lg:grid-cols-4 gap-0 lg:gap-10">
-                <div className="flex items-center justify-between rounded-lg border p-5 bg-white">
+                <div className="flex items-center justify-between rounded-lg border p-5 bg-white animate__animated animate__fadeInLeft">
                     <div>
                         <h5 className="text-[#1b397f]">Active Listings</h5>
                         <h2 className="text-[#3570FC]">124</h2>
@@ -24,7 +24,7 @@ function Dash() {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between border rounded-lg p-5 bg-white">
+                <div className="flex items-center justify-between border rounded-lg p-5 bg-white animate__animated animate__fadeInLeft">
                     <div>
                         <h5 className="text-[#1b397f]">Listing Views</h5>
                         <h2 className="text-[#3570FC]">
@@ -41,7 +41,7 @@ function Dash() {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between border rounded-lg p-5 bg-white">
+                <div className="flex items-center justify-between border rounded-lg p-5 bg-white animate__animated animate__fadeInRight">
                     <div>
                         <h5 className="text-[#1b397f]">Your Reviews</h5>
                         <h2 className="text-[#3570FC]">
@@ -58,7 +58,7 @@ function Dash() {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between border rounded-lg p-5 bg-white">
+                <div className="flex items-center justify-between border rounded-lg p-5 bg-white animate__animated animate__fadeInRight">
                     <div>
                         <h5 className="text-[#1b397f]">Times Bookmarked</h5>
                         <h2 className="text-[#3570FC]">
@@ -76,7 +76,7 @@ function Dash() {
                 </div>
             </div>
 
-            <div>
+            <div className="animate__animated animate__fadeInUp">
                 <Statistics />
             </div>
         </>

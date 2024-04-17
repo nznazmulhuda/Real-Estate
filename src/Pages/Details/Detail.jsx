@@ -232,7 +232,7 @@ function Detail({ details }) {
 
                 <div className="divider"></div>
 
-                <div>
+                <div className="overflow-hidden">
                     <h1
                         className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
                         data-aos="fade-up"

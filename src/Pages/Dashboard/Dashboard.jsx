@@ -5,7 +5,7 @@ function Dashboard() {
     return (
         <>
             <div className="grid grid-cols-12 gap-3 bg-[#3571fc13]">
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-2 animate__animated animate__fadeInLeft">
                     <SideBar />
                 </div>
 

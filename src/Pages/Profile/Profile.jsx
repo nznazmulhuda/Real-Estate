@@ -52,7 +52,7 @@ function Profile() {
                 </div>
 
                 {/* Personal Info */}
-                <div className="px-5 py-3 mt-5">
+                <div className="px-5 py-5 mt-5 bg-white rounded-md">
                     <div
                         className="flex items-center gap-3 text-[#152b5f] mb-3"
                         data-aos="fade-up"
@@ -185,24 +185,25 @@ function Profile() {
                             />
                         </InputGroup>
                     </div>
+
+                    <div className="divider"></div>
+
+                    <div
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="150"
+                        data-aos-offset="1"
+                    >
+                        <Button
+                            className="w-full"
+                            appearance="ghost"
+                            onClick={() => navigate("/dashboard/settings")}
+                        >
+                            Update Profile
+                        </Button>
+                    </div>
                 </div>
             </form>
-            <hr />
-            <div
-                className="px-5"
-                data-aos="fade-up"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="150"
-                data-aos-offset="1"
-            >
-                <Button
-                    className="w-full"
-                    appearance="ghost"
-                    onClick={() => navigate("/dashboard/settings")}
-                >
-                    Update Profile
-                </Button>
-            </div>
         </>
     );
 }
