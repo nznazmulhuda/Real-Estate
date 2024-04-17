@@ -88,6 +88,10 @@ function Register() {
                             errors.Name && `border-red-500`
                         }`}
                         {...register("Name", { required: true })}
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="250"
+                        data-aos-offset="1"
                     />
 
                     {errors.Name && (
@@ -103,6 +107,10 @@ function Register() {
                             errors.Email && `border-red-500`
                         }`}
                         {...register("Email", { required: true })}
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="230"
+                        data-aos-offset="1"
                     />
 
                     {errors.Email && (
@@ -118,6 +126,10 @@ function Register() {
                             errors.Photo_Url && `border-red-500`
                         }`}
                         {...register("Photo_Url", { required: true })}
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="210"
+                        data-aos-offset="1"
                     />
 
                     {errors.Photo_Url && (
@@ -126,7 +138,13 @@ function Register() {
                         </p>
                     )}
 
-                    <div className="flex items-center justify-between relative">
+                    <div
+                        className="flex items-center justify-between relative"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="190"
+                        data-aos-offset="1"
+                    >
                         <input
                             type={passVisible ? "text" : "password"}
                             placeholder="Enter your password"
@@ -154,7 +172,13 @@ function Register() {
                     </div>
 
                     <div className="pl-3">
-                        <p className="flex items-center gap-2">
+                        <p
+                            className="flex items-center gap-2"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="170"
+                            data-aos-offset="1"
+                        >
                             {passVer.length >= 6 ? (
                                 <FaRegCheckCircle className="text-green-500" />
                             ) : (
@@ -163,7 +187,13 @@ function Register() {
                             <span className="-mt-1">min 6 char</span>
                         </p>
 
-                        <p className="flex items-center gap-2">
+                        <p
+                            className="flex items-center gap-2"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="150"
+                            data-aos-offset="1"
+                        >
                             {/[a-z]/.test(passVer) ? (
                                 <FaRegCheckCircle className="text-green-500" />
                             ) : (
@@ -172,7 +202,13 @@ function Register() {
                             <span className="-mt-1">must (a-z)</span>
                         </p>
 
-                        <p className="flex items-center gap-2">
+                        <p
+                            className="flex items-center gap-2"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="130"
+                            data-aos-offset="1"
+                        >
                             {/[A-Z]/.test(passVer) ? (
                                 <FaRegCheckCircle className="text-green-500" />
                             ) : (
@@ -189,16 +225,32 @@ function Register() {
                         data-primary="blue-600"
                         data-primary-reset="{}"
                         defaultValue={"Register"}
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="110"
+                        data-aos-offset="1"
                     />
 
-                    <div className="divider py-5">
+                    <div
+                        className="divider py-5"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="90"
+                        data-aos-offset="1"
+                    >
                         <h1 className="text-lg font-lato font-bold">
                             Continue with
                         </h1>
                     </div>
 
                     <div className="text-center">
-                        <div className="flex items-center justify-center gap-5">
+                        <div
+                            className="flex items-center justify-center gap-5"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="70"
+                            data-aos-offset="1"
+                        >
                             <FaGoogle
                                 className="text-2xl cursor-pointer"
                                 onClick={handleGoogle}
@@ -210,7 +262,13 @@ function Register() {
                             />
                         </div>
 
-                        <Link to={"/login"}>
+                        <Link
+                            to={"/login"}
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="1"
+                        >
                             <h1 className="text-blue-500 hover:underline font-semibold mt-3 text-lg no-underline">
                                 Already have an account
                             </h1>

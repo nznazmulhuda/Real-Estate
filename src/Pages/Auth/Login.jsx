@@ -64,10 +64,10 @@ function Login() {
 
     return (
         <>
-            <div className="mx-auto container mb-20">
+            <div className="mx-auto container mb-20 mt-20">
                 <form
                     onSubmit={handleSubmit(handleRegister)}
-                    className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 md:p-7 lg:p-10 mt-10 rounded-lg shadow-lg"
+                    className="flex flex-col w-4/5 md:w-4/5 lg:w-3/5 mx-auto p-5 md:p-7 lg:p-10 mt-10 rounded-lg shadow-lg gap-3"
                 >
                     <input
                         type="email"
@@ -76,6 +76,10 @@ function Login() {
                             errors.Email && `border-red-500`
                         }`}
                         {...register("Email", { required: true })}
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="260"
+                        data-aos-offset="1"
                     />
 
                     {errors.Email && (
@@ -84,7 +88,13 @@ function Login() {
                         </p>
                     )}
 
-                    <div className="flex items-center justify-between relative">
+                    <div
+                        className="flex items-center justify-between relative"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="230"
+                        data-aos-offset="2"
+                    >
                         <input
                             type={passVisible ? "text" : "password"}
                             placeholder="Enter your password"
@@ -112,7 +122,13 @@ function Login() {
                     </div>
 
                     <div className="pl-3">
-                        <p className="flex items-center gap-2">
+                        <p
+                            className="flex items-center gap-2"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="200"
+                            data-aos-offset="3"
+                        >
                             {passVer.length >= 6 ? (
                                 <FaRegCheckCircle className="text-green-500" />
                             ) : (
@@ -121,7 +137,13 @@ function Login() {
                             <span className="-mt-1">min 6 char</span>
                         </p>
 
-                        <p className="flex items-center gap-2">
+                        <p
+                            className="flex items-center gap-2"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="170"
+                            data-aos-offset="4"
+                        >
                             {/[a-z]/.test(passVer) ? (
                                 <FaRegCheckCircle className="text-green-500" />
                             ) : (
@@ -130,7 +152,13 @@ function Login() {
                             <span className="-mt-1">must (a-z)</span>
                         </p>
 
-                        <p className="flex items-center gap-2">
+                        <p
+                            className="flex items-center gap-2"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="150"
+                            data-aos-offset="5"
+                        >
                             {/[A-Z]/.test(passVer) ? (
                                 <FaRegCheckCircle className="text-green-500" />
                             ) : (
@@ -147,16 +175,32 @@ function Login() {
                         data-primary="blue-600"
                         data-primary-reset="{}"
                         defaultValue={"Login"}
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="130"
+                        data-aos-offset="6"
                     />
 
-                    <div className="divider py-5">
+                    <div
+                        className="divider py-5"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="110"
+                        data-aos-offset="7"
+                    >
                         <h1 className="text-lg font-lato font-bold">
                             Continue with
                         </h1>
                     </div>
 
                     <div className="text-center">
-                        <div className="flex items-center justify-center gap-5">
+                        <div
+                            className="flex items-center justify-center gap-5"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="80"
+                            data-aos-offset="8"
+                        >
                             <FaGoogle
                                 className="text-2xl cursor-pointer"
                                 onClick={handleGoogle}
@@ -168,7 +212,13 @@ function Login() {
                             />
                         </div>
 
-                        <Link to={"/register"}>
+                        <Link
+                            to={"/register"}
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="9"
+                        >
                             <h1 className="text-blue-500 hover:underline font-semibold mt-3 text-lg no-underline">
                                 Do not have an account?
                             </h1>

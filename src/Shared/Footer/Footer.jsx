@@ -19,7 +19,7 @@ function Footer() {
                     <div
                         data-aos="fade-right"
                         data-aos-easing="ease-in-sine"
-                        data-aos-offset="300"
+                        data-aos-offset="0"
                     >
                         <Link
                             to={"/"}
@@ -55,7 +55,7 @@ function Footer() {
                     <div
                         className="text-[#566985] font-semibold text-lg font-lato"
                         data-aos="fade-right"
-                        data-aos-offset="300"
+                        data-aos-offset="0"
                         data-aos-easing="ease-in-sine"
                     >
                         <h1 className="text-xl">Helpful links</h1>
@@ -116,7 +116,7 @@ function Footer() {
                     <div
                         className="text-[#566985] font-semibold text-lg font-lato"
                         data-aos="fade-right"
-                        data-aos-offset="300"
+                        data-aos-offset="0"
                         data-aos-easing="ease-in-sine"
                     >
                         <h1 className="text-xl">Contacts Info</h1>
@@ -161,7 +161,7 @@ function Footer() {
                     <div
                         className="text-[#566985] font-semibold text-lg font-lato"
                         data-aos="fade-right"
-                        data-aos-offset="300"
+                        data-aos-offset="0"
                         data-aos-easing="ease-in-sine"
                     >
                         <h1 className="text-xl">Download our APP</h1>
