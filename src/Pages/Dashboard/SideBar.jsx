@@ -1,4 +1,4 @@
-import { Sidenav, Nav, ButtonToolbar } from "rsuite";
+import { Sidenav, Nav } from "rsuite";
 import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
 import { useContext, useState } from "react";
 import AdminIcon from "@rsuite/icons/Admin";
@@ -6,45 +6,12 @@ import GearIcon from "@rsuite/icons/Gear";
 import OffIcon from "@rsuite/icons/Off";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import { Dropdown } from "rsuite";
 
 function SideBar() {
     const [expanded, setExpanded] = useState(false);
     const [activeKey, setActiveKey] = useState("1");
     const navigate = useNavigate();
     const { signOutUser } = useContext(AuthContext);
-
-    const CustomDropdown = ({ ...props }) => (
-        <Dropdown {...props}>
-            <Dropdown.Item
-                icon={<DashboardIcon />}
-                onClick={() => navigate("/dashboard")}
-            >
-                Dashboard
-            </Dropdown.Item>
-
-            <Dropdown.Item
-                icon={<AdminIcon />}
-                onClick={() => navigate("profile")}
-            >
-                Profile
-            </Dropdown.Item>
-
-            <Dropdown.Item
-                icon={<GearIcon />}
-                onClick={() => navigate("settings")}
-            >
-                Settings
-            </Dropdown.Item>
-
-            <Dropdown.Item
-                icon={<OffIcon className={`text-red-500`} />}
-                onClick={signOutUser}
-            >
-                Sign Out
-            </Dropdown.Item>
-        </Dropdown>
-    );
 
     return (
         <>
@@ -104,12 +71,6 @@ function SideBar() {
                         className="hidden lg:flex"
                     />
                 </Sidenav>
-            </div>
-
-            <div className="z-[9999] flex lg:hidden">
-                <ButtonToolbar>
-                    <CustomDropdown title="Menu" trigger="click" />
-                </ButtonToolbar>
             </div>
         </>
     );
