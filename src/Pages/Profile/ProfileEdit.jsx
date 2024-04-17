@@ -62,12 +62,15 @@ function ProfileEdit() {
                 >
                     {/* change avtar */}
                     <div className="bg-white rounded-b-lg">
-                        <div className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3">
+                        <div
+                            className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3"
+                            data-aos="fade-up"
+                        >
                             <IoPersonCircleSharp className="text-2xl text-[#3570FC]" />{" "}
                             <h5>Change Avatar</h5>
                         </div>
 
-                        <div className="w-full h-[25vh] relative">
+                        <div className="w-full h-[25vh] relative animate__animated animate__fadeIn">
                             <img
                                 className="w-full h-full rounded-b-lg"
                                 src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1713225600&semt=sph"
@@ -75,7 +78,7 @@ function ProfileEdit() {
                             />
 
                             <div className="absolute top-1/2 -translate-y-1/2 px-5 flex items-center gap-10">
-                                <div className="w-24 h-24 bg-[#b7b1b151] p-3 rounded-lg">
+                                <div className="w-24 h-24 bg-[#b7b1b151] p-3 rounded-lg animate__animated animate__fadeIn animate__delay-1s">
                                     <img
                                         className="rounded-lg w-full h-full"
                                         src={user.photoURL}
@@ -91,13 +94,14 @@ function ProfileEdit() {
                                 />
                                 <label
                                     htmlFor="file"
-                                    className="text-white cursor-pointer"
+                                    className="text-white cursor-pointer animate__animated animate__fadeInLeft
+                                    animate__delay-1s"
                                 >
                                     Upload New Photo
                                 </label>
                             </div>
 
-                            <div>
+                            <div className="animate__animated animate__fadeInUp animate__delay-1s">
                                 <input
                                     type="file"
                                     id="coverPic"
@@ -116,14 +120,23 @@ function ProfileEdit() {
 
                     {/* Personal Info */}
                     <div className="px-5 py-3 mt-5">
-                        <div className="flex items-center gap-3 text-[#152b5f] mb-3">
+                        <div
+                            className="flex items-center gap-3 text-[#152b5f] mb-3"
+                            data-aos="fade-up"
+                        >
                             <FaKey className="text-2xl text-[#3570FC]" />{" "}
                             <h5>Personal Info</h5>
                         </div>
 
                         <hr />
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 First Name
                             </h6>
@@ -146,7 +159,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="70"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 Last Name
                             </h6>
@@ -172,7 +191,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="90"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 Photo Url
                             </h6>
@@ -190,7 +215,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="110"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 Email Address
                             </h6>
@@ -209,7 +240,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="130"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 phone
                             </h6>
@@ -229,7 +266,13 @@ function ProfileEdit() {
                         </div>
                     </div>
 
-                    <div className="w-full px-5">
+                    <div
+                        className="w-full px-5"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="150"
+                        data-aos-offset="1"
+                    >
                         <Button
                             appearance="ghost"
                             className="w-full"
@@ -245,14 +288,23 @@ function ProfileEdit() {
                     className="col-span-6 lg:col-span-2"
                 >
                     <div className="">
-                        <div className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3">
+                        <div
+                            className="flex items-center gap-3 text-[#152b5f] mb-3 px-5 py-3"
+                            data-aos="fade-up"
+                        >
                             <FaKey className="text-2xl text-[#3570FC]" />{" "}
                             <h5>Change Password</h5>
                         </div>
 
                         <hr />
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 Current Password
                             </h6>
@@ -270,7 +322,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="70"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 New Password
                             </h6>
@@ -288,7 +346,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="mb-6">
+                        <div
+                            className="mb-6"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="90"
+                            data-aos-offset="1"
+                        >
                             <h6 className="text-sm text-[#2147a2] mb-3">
                                 New Password
                             </h6>
@@ -304,7 +368,13 @@ function ProfileEdit() {
                             </InputGroup>
                         </div>
 
-                        <div className="w-full">
+                        <div
+                            className="w-full"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="110"
+                            data-aos-offset="1"
+                        >
                             <Button
                                 appearance="ghost"
                                 className="w-full"

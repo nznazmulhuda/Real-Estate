@@ -9,9 +9,14 @@ function Top({ title }) {
     return (
         <>
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center">
-                <h3 className="uppercase text-[#1b3678]">{title}</h3>
+                <h3 className="uppercase text-[#1b3678]" data-aos="fade-right">
+                    {title}
+                </h3>
 
-                <div className="bg-white flex items-center justify-between mt-4 lg:mt-0 lg:w-[25%] px-1 lg:px-3 py-2 rounded-xl relative shadow-lg">
+                <div
+                    className="bg-white flex items-center justify-between mt-4 lg:mt-0 lg:w-[25%] px-1 lg:px-3 py-2 rounded-xl relative shadow-lg"
+                    data-aos="fade-left"
+                >
                     <div className="flex items-center gap-1 lg:gap-3 border-r flex-grow lg:mr-3">
                         <div className="w-10 h-10 md:w-10 md:h-10 lg:w-20 lg:h-20 lg:border lg:p-2 rounded-full flex items-center justify-center">
                             <img
