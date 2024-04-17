@@ -34,19 +34,24 @@ function Banner({ data }) {
     return (
         <>
             <div>
-                <div className="md:w-full lg:w-full h-[50vh] md:h-[45vh] lg:h-[40vh] relative">
+                <div className="md:w-full lg:w-full h-[50vh] md:h-[45vh] lg:h-[50vh] relative">
                     <img
                         className="w-full h-full opacity-80"
                         src={image_urls[1]}
                         alt=""
                     />
 
-                    <div className="w-full h-[50vh] md:h-[45vh] lg:h-[40vh] bg-gradient-to-b from-zinc-400 to-black absolute top-0 opacity-55"></div>
+                    <div className="w-full h-[50vh] md:h-[45vh] lg:h-[50vh] bg-gradient-to-b from-zinc-400 to-black absolute top-0 opacity-55"></div>
 
-                    <div className="container top-0 absolute left-1/2 -translate-x-1/2 h-[50vh] md:h-[45vh] lg:h-[40vh]">
+                    <div className="container top-0 absolute left-1/2 -translate-x-1/2 h-[50vh] md:h-[45vh] lg:h-[50vh]">
                         <div className="flex flex-col justify-center h-full lg:mt-10 space-y-1 md:space-y-2 lg:space-y-5">
                             <div className="space-x-3">
-                                <Button appearance="primary">
+                                <Button
+                                    appearance="primary"
+                                    data-aos="fade-right"
+                                    data-aos-offset="300"
+                                    data-aos-easing="ease-in-sine"
+                                >
                                     <p className="text-xs md:text-sm lg:text-lg">
                                         {status.toUpperCase()}
                                     </p>
@@ -55,17 +60,20 @@ function Banner({ data }) {
                                 <Button
                                     appearance="ghost"
                                     style={{ color: "white" }}
+                                    data-aos="fade-right"
+                                    data-aos-offset="500"
+                                    data-aos-easing="ease-in-sine"
                                 >
                                     {segment_name.toUpperCase()}
                                 </Button>
                             </div>
 
-                            <h1 className="text-white text-xl md:text-2xl lg:text-4xl font-semibold font-josefin">
+                            <h1 className="text-white text-xl md:text-2xl lg:text-4xl font-semibold font-josefin animate__animated animate__fadeInUp animate__delay-1s">
                                 {estate_title}
                             </h1>
 
                             <div className="flex items-center gap-10">
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center gap-2 animate__animated animate__fadeInLeft">
                                     <FaLocationDot className="text-[#3270FC] text-xl" />
 
                                     <button className="text-white font-semibold font-lato text-xs md:text-sm lg:text-lg">
@@ -73,7 +81,7 @@ function Banner({ data }) {
                                     </button>
                                 </div>
 
-                                <div className="flex gap-2 items-center">
+                                <div className="flex gap-2 items-center animate__animated animate__fadeInLeft">
                                     <FaStar className="text-yellow-500 text-sm md:text-lg lg:text-xl" />
 
                                     <h1 className="text-white text-xs md:text-sm lg:text-lg font-bold ">
@@ -87,7 +95,7 @@ function Banner({ data }) {
                             </div>
 
                             <div>
-                                <h1 className="text-white font-bold text-sm md:text-lg lg:text-xl">
+                                <h1 className="text-white font-bold text-sm md:text-lg lg:text-xl animate__animated animate__fadeInLeft">
                                     Price:{" "}
                                     <sup className="text-xs md:text-sm lg:text-lg text-white font-bold ml-2">
                                         $
@@ -99,17 +107,16 @@ function Banner({ data }) {
                             </div>
                         </div>
 
-                        <Button
-                            appearance="ghost"
-                            style={{
-                                position: "absolute",
-                                right: 0,
-                                bottom: 20,
-                                color: "white",
-                            }}
-                        >
-                            <FaShareAlt /> Share
-                        </Button>
+                        <div className="animate__animated animate__fadeInRight absolute bottom-5 right-0">
+                            <Button
+                                appearance="ghost"
+                                style={{
+                                    color: "white",
+                                }}
+                            >
+                                <FaShareAlt /> Share
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

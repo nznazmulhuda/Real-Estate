@@ -35,7 +35,7 @@ function HomeCard({ homeCard }) {
 
     return (
         <>
-            <div data-aos="flip-down" className="overflow-hidden">
+            <div data-aos="fade-right" className="overflow-hidden">
                 <div
                     className="card shadow-2xl mt-7 pt-4 overflow-hidden rounded-xl bg-transparent"
                     data-aos="fade-up"

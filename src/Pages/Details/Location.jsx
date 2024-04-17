@@ -15,24 +15,33 @@ function Location({ details }) {
     return (
         <>
             <div id="location" className="mt-10 rounded-lg">
-                <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                <h1
+                    className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
+                    data-aos="fade-up"
+                >
                     Location
                 </h1>
-
-                <MapContainer
-                    center={position}
-                    zoom={15}
-                    scrollWheelZoom={false}
-                    className="h-[50vh]"
+                <div
+                    data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back"
+                    data-aos-delay="50"
+                    data-aos-offset="0"
                 >
-                    <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <Marker position={position} icon={marker}>
-                        <Tooltip>{estate_title}</Tooltip>
-                    </Marker>
-                </MapContainer>
+                    <MapContainer
+                        center={position}
+                        zoom={15}
+                        scrollWheelZoom={false}
+                        className="h-[50vh]"
+                    >
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={position} icon={marker}>
+                            <Tooltip>{estate_title}</Tooltip>
+                        </Marker>
+                    </MapContainer>
+                </div>
             </div>
         </>
     );

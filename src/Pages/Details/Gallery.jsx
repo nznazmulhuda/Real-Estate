@@ -8,14 +8,17 @@ function Gallery({ details }) {
     const { segment_name, image_urls, bedrooms, bathrooms } = details;
     return (
         <>
-            <div id="gallery">
+            <div id="gallery" className="animate__animated animate__fadeInUp">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                     {image_urls.map((url) => (
                         <div
                             className="h-[30vh] rounded-xl shadow-lg lg:border-2 lg:border-zinc-500 lg:p-2"
                             key={url}
                         >
-                            <div className="w-full h-full bg-black rounded-xl">
+                            <div
+                                className="w-full h-full bg-black rounded-xl"
+                                data-aos="fade-up"
+                            >
                                 <img
                                     className="w-full h-full hover:opacity-80 transition-all ease-in cursor-pointer rounded-xl"
                                     src={url}
@@ -27,7 +30,12 @@ function Gallery({ details }) {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 mt-5 border divide-x">
-                    <div className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100">
+                    <div
+                        className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100"
+                        data-aos="fade-right"
+                        data-aos-offset="150"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <IoHomeOutline className="text-[50px] text-[#3570FC]" />
 
                         <h1 className="text-2xl font-lato font-bold text-gray-600">
@@ -41,7 +49,12 @@ function Gallery({ details }) {
                         </p>
                     </div>
 
-                    <div className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100">
+                    <div
+                        className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100"
+                        data-aos="fade-right"
+                        data-aos-offset="200"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <TiGroupOutline className="text-[50px] text-[#3570FC]" />
 
                         <h1 className="text-2xl font-lato font-bold text-gray-600">
@@ -55,7 +68,12 @@ function Gallery({ details }) {
                         </p>
                     </div>
 
-                    <div className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100">
+                    <div
+                        className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100"
+                        data-aos="fade-right"
+                        data-aos-offset="250"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <TbBed className="text-[50px] text-[#3570FC]" />
 
                         <h1 className="text-2xl font-lato font-bold text-gray-600">
@@ -69,7 +87,12 @@ function Gallery({ details }) {
                         </p>
                     </div>
 
-                    <div className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100">
+                    <div
+                        className="flex flex-col items-center gap-2 justify-center col-span-1 py-6 bg-slate-100"
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <PiBathtubLight className="text-[50px] text-[#3570FC]" />
 
                         <h1 className="text-2xl font-lato font-bold text-gray-600">

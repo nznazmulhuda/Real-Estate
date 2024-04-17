@@ -26,12 +26,21 @@ function ContactForm({ details }) {
     return (
         <>
             <div className="border mt-10 sticky top-28 rounded-xl ">
-                <h1 className="text-3xl font-bold font-lato text-white bg-[#3570FC] p-5 rounded-t-lg">
+                <h1
+                    className="text-3xl font-bold font-lato text-white bg-[#3570FC] p-5 rounded-t-lg"
+                    data-aos="fade-up"
+                >
                     Contact Property
                 </h1>
 
                 <form className="p-7" onSubmit={(e) => e.preventDefault()}>
-                    <div className="space-y-2 mb-5">
+                    <div
+                        className="space-y-2 mb-5"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="110"
+                        data-aos-offset="0"
+                    >
                         <p className="text-[#1b3980] font-lato font-bold text-sm">
                             Your name<sup className="text-red-500">*</sup>
                         </p>
@@ -43,7 +52,13 @@ function ContactForm({ details }) {
                         </InputGroup>
                     </div>
 
-                    <div className="space-y-2 mb-5">
+                    <div
+                        className="space-y-2 mb-5"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="90"
+                        data-aos-offset="0"
+                    >
                         <p className="text-[#1b3980] font-lato font-bold text-sm">
                             Your Phone<sup className="text-red-500">*</sup>
                         </p>
@@ -61,7 +76,13 @@ function ContactForm({ details }) {
                         </InputGroup>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-10">
+                    <div
+                        className="grid lg:grid-cols-2 gap-10"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="70"
+                        data-aos-offset="0"
+                    >
                         <div className="space-y-2 mb-5">
                             <p className="text-[#1b3980] font-lato font-bold text-sm">
                                 Date
@@ -86,6 +107,10 @@ function ContactForm({ details }) {
                         type="submit"
                         appearance="ghost"
                         className="w-full mt-5"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="50"
+                        data-aos-offset="0"
                     >
                         Send
                     </Button>

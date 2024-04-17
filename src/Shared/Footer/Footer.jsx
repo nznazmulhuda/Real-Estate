@@ -16,7 +16,11 @@ function Footer() {
                 }`}
             >
                 <footer className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 container mx-auto mt-14 pb-12 text-center md:text-left lg:text-left">
-                    <div>
+                    <div
+                        data-aos="fade-right"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-offset="300"
+                    >
                         <Link
                             to={"/"}
                             className="lg:text-2xl font-lato font-bold cursor-pointer text-[#144273]"
@@ -48,7 +52,12 @@ function Footer() {
                         </p>
                     </div>
 
-                    <div className="text-[#566985] font-semibold text-lg font-lato">
+                    <div
+                        className="text-[#566985] font-semibold text-lg font-lato"
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <h1 className="text-xl">Helpful links</h1>
 
                         <ul className="mt-5 flex flex-col pl-10 md:pl-0 lg:pl-0">
@@ -104,7 +113,12 @@ function Footer() {
                         </ul>
                     </div>
 
-                    <div className="text-[#566985] font-semibold text-lg font-lato">
+                    <div
+                        className="text-[#566985] font-semibold text-lg font-lato"
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <h1 className="text-xl">Contacts Info</h1>
 
                         <div className="flex items-center gap-2 mt-5 pl-10 md:pl-0 lg:pl-0">
@@ -144,7 +158,12 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className="text-[#566985] font-semibold text-lg font-lato">
+                    <div
+                        className="text-[#566985] font-semibold text-lg font-lato"
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <h1 className="text-xl">Download our APP</h1>
 
                         <p className="text-[#878C9F] text-sm leading-6 mt-3 mb-4">
@@ -165,6 +184,7 @@ function Footer() {
                 </footer>
 
                 <div className="divider bg-gray-600 h-1 container mx-auto mt-0"></div>
+
                 <p className="text-[#878C9F] text-center pb-3">
                     Copyright © 2024 - All right reserved by Dream Dwellings.
                 </p>

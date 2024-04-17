@@ -13,12 +13,15 @@ const texts = {
 };
 
 function Review() {
-    const [hoverValue, setHoverValue] = useState(3);
+    const [hoverValue, setHoverValue] = useState(1);
     const { user } = useContext(AuthContext);
     return (
         <>
             <div className="border rounded-xl p-7 mt-10 shadow-lg ">
-                <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                <h1
+                    className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
+                    data-aos="fade-up"
+                >
                     Add Your Review
                 </h1>
 
@@ -27,9 +30,21 @@ function Review() {
                     className="bg-[#3571fc11] px-8 py-10"
                 >
                     <div className="flex flex-col items-start gap-5">
-                        <p>Your rating for this listing :</p>
+                        <p
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="130"
+                            data-aos-offset="0"
+                        >
+                            Your rating for this listing :
+                        </p>
 
-                        <div>
+                        <div
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="110"
+                            data-aos-offset="0"
+                        >
                             <Rate
                                 defaultValue={1}
                                 onChangeActive={setHoverValue}
@@ -44,7 +59,13 @@ function Review() {
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
+                    <div
+                        className="grid md:grid-cols-2 lg:grid-cols-2 gap-10"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="90"
+                        data-aos-offset="0"
+                    >
                         <div className="space-y-2 mb-5">
                             <p className="text-[#1b3980] font-lato font-bold text-sm">
                                 Your name<sup className="text-red-500">*</sup>
@@ -76,7 +97,12 @@ function Review() {
                         </div>
                     </div>
 
-                    <div>
+                    <div
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="70"
+                        data-aos-offset="0"
+                    >
                         <Input
                             as="textarea"
                             rows={8}
@@ -86,6 +112,10 @@ function Review() {
                     </div>
 
                     <Button
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="50"
+                        data-aos-offset="0"
                         type="submit"
                         appearance="ghost"
                         className="w-full mt-5"

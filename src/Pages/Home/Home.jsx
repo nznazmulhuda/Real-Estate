@@ -38,10 +38,10 @@ function Home() {
 
             <div className="bg-white">
                 <div className="text-center pt-5 md:pt-7 lg:pt-10">
-                    <h1 className="text-blue-700 font-bold text-xl md:text-2xl lg:text-4xl mb-4 animate__animated animate__fadeInUp animate__delay-1.2s ">
+                    <h1 className="text-blue-700 font-bold text-xl md:text-2xl lg:text-4xl mb-4 animate__animated animate__fadeInUp animate__delay-1s">
                         Housing Selection
                     </h1>
-                    <h5 className="text-xs md:text-sm lg:text-lg text-gray-600 animate__animated animate__fadeInUp animate__delay-1.5s">
+                    <h5 className="text-xs md:text-sm lg:text-lg text-gray-600 animate__animated animate__fadeInUp animate__delay-1s">
                         Dive into our <q>Housing Selection</q> to uncover an
                         array of homes <br /> tailored to your unique tastes and
                         requirements
@@ -55,9 +55,13 @@ function Home() {
                 </div>
 
                 <div className="mt-20">
-                    <h1 className="text-[#144273] font-bold text-3xl leading-7 font-josefin text-center mb-4">
+                    <h1
+                        className="text-blue-700 font-bold text-xl md:text-2xl lg:text-4xl mb-6 text-center"
+                        data-aos="fade-up"
+                    >
                         What Our Clients Say
                     </h1>
+
                     <Swiper
                         slidesPerView={4}
                         centeredSlides={true}
@@ -67,7 +71,7 @@ function Home() {
                             clickable: true,
                         }}
                         modules={[Pagination]}
-                        className=""
+                        data-aos="fade-left"
                     >
                         {feedbacks.map((feedback) => (
                             <SwiperSlide key={feedback.id}>
@@ -80,6 +84,7 @@ function Home() {
                 <div className="relative translate-y-1/2">
                     <div
                         className={`container mx-auto ${Style.newsletter} relative overflow-hidden flex items-center justify-between flex-col md:flex-row lg:flex-row gap-5 md:gap-0 lg:gap-0 py-10 px-5 md:py-14 md:px-7 lg:py-20 lg:px-16`}
+                        data-aos="fade-up"
                     >
                         <div>
                             <h3 className="text-white font-lato text-sm font-semibold uppercase">

@@ -28,45 +28,90 @@ function Detail({ details }) {
                 className="mt-10 p-10 border rounded-lg bg-[#3571fc11]"
             >
                 <div>
-                    <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                    <h1
+                        className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
+                        data-aos="fade-up"
+                    >
                         Details
                     </h1>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Property Id:{" "}
                             <span className="font-bold ml-1">{id}</span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Area: <span className="font-bold ml-1">{area}</span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Bathrooms:{" "}
                             <span className="font-bold ml-1">{bathrooms}</span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Bedroom:{" "}
                             <span className="font-bold ml-1">{bedrooms}</span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Type:{" "}
                             <span className="font-bold ml-1">
                                 {segment_name}
                             </span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Floor number:{" "}
                             <span className="font-bold ml-1">
                                 {floor_number ? floor_number : 20}
                             </span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Status:{" "}
                             <span className="font-bold ml-1">
                                 {status.charAt(0).toUpperCase() +
@@ -74,14 +119,26 @@ function Detail({ details }) {
                             </span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Built Year:{" "}
                             <span className="font-bold ml-1">
                                 {year_built ? year_built : "2019"}
                             </span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Pet Policy:{" "}
                             <span className="font-bold ml-1">
                                 {pet_policy &&
@@ -91,12 +148,24 @@ function Detail({ details }) {
                             </span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             Price:{" "}
                             <span className="font-bold ml-1">{price}</span>
                         </Button>
 
-                        <Button appearance="ghost">
+                        <Button
+                            appearance="ghost"
+                            data-aos="fade-zoom-in"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             HOA fees:{" "}
                             <span className="font-bold ml-1">
                                 {hoa_fees ? hoa_fees : "$50/month"}
@@ -108,13 +177,23 @@ function Detail({ details }) {
                 <div className="divider"></div>
 
                 <div>
-                    <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                    <h1
+                        className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
+                        data-aos="fade-up"
+                    >
                         Facilities
                     </h1>
 
                     <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {facilities.map((facilitie) => (
-                            <Button appearance="ghost" key={facilitie}>
+                            <Button
+                                appearance="ghost"
+                                key={facilitie}
+                                data-aos="fade-zoom-in"
+                                data-aos-easing="ease-in-back"
+                                data-aos-delay="50"
+                                data-aos-offset="0"
+                            >
                                 {facilitie.charAt(0).toUpperCase() +
                                     facilitie.slice(1)}
                             </Button>
@@ -125,7 +204,10 @@ function Detail({ details }) {
                 <div className="divider"></div>
 
                 <div>
-                    <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                    <h1
+                        className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
+                        data-aos="fade-up"
+                    >
                         Amenities
                     </h1>
 
@@ -136,6 +218,10 @@ function Detail({ details }) {
                                     appearance="ghost"
                                     className="bg-[#3570FC] text-white py-2 px-3 text-center rounded-lg text-lg font-bold font-lato hover:bg-[#3571fcf0] cursor-pointer"
                                     key={amen}
+                                    data-aos="fade-zoom-in"
+                                    data-aos-easing="ease-in-back"
+                                    data-aos-delay="50"
+                                    data-aos-offset="0"
                                 >
                                     {amen.charAt(0).toUpperCase() +
                                         amen.slice(1)}
@@ -147,26 +233,53 @@ function Detail({ details }) {
                 <div className="divider"></div>
 
                 <div>
-                    <h1 className="text-3xl font-bold font-lato text-[#1b3980] mb-5">
+                    <h1
+                        className="text-3xl font-bold font-lato text-[#1b3980] mb-5"
+                        data-aos="fade-up"
+                    >
                         About This Listing
                     </h1>
 
-                    <p className="text-lg text-gray-400 font-bold font-lato">
+                    <p
+                        className="text-lg text-gray-400 font-bold font-lato"
+                        data-aos="fade-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="50"
+                        data-aos-offset="0"
+                    >
                         {greating}
                     </p>
 
                     <br />
 
-                    <p className="text-lg text-gray-400 font-bold font-lato">
+                    <p
+                        className="text-lg text-gray-400 font-bold font-lato"
+                        data-aos="fade-in"
+                        data-aos-easing="ease-in-back"
+                        data-aos-delay="50"
+                        data-aos-offset="0"
+                    >
                         {description}
                     </p>
 
                     <div className=" flex flex-col items-end mt-5">
-                        <h1 className="text-xl text-[#1b397d] font-bold mt-5">
+                        <h1
+                            className="text-xl text-[#1b397d] font-bold mt-5"
+                            data-aos="fade-left"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="50"
+                            data-aos-offset="0"
+                        >
                             To know more about this {segment_name.toLowerCase()}
                         </h1>
 
-                        <button className="btn bg-[#3570FC] hover:bg-[#3571fcef] text-white font-bold text-xl mt-4">
+                        <button
+                            className="btn bg-[#3570FC] hover:bg-[#3571fcef] text-white font-bold text-xl mt-4"
+                            data-aos="fade-left"
+                            data-aos-easing="ease-in-back"
+                            data-aos-delay="70"
+                            data-aos-offset="0"
+                        >
                             Contact us
                         </button>
                     </div>
